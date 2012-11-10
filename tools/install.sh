@@ -2,11 +2,11 @@
 # Fetch repo and run setup script
 ############################
 
-# Back up .dotfiles-xfce
+# Remove old dir
 if [ -d ~/.dotfiles-xfce ]
 then
-  echo "Backing up ~/.dotfiles-xfce directory to ~/.dotfiles-xfce_backup"
-  mv ~/.dotfiles-xfce ~/.dotfiles-xfce_backup
+  echo "Removing old ~/.dotfiles-xfce directory"
+  rm -fr ~/.dotfiles-xfce
   exit
 fi
 
@@ -19,22 +19,22 @@ hash git >/dev/null && /usr/bin/env git clone https://github.com/sergeylukin/dot
 # Back up ~/.config
 if [ -d ~/.config ]
 then
-  echo "Backing up ~/.config directory to ~/.config_backup"
-  mv ~/.config ~/.config_backup
+  echo "Backing up ~/.config directory to ~/.dotfiles-xfce/backup/"
+  mv ~/.config ~/.dotfiles-xfce/backup/
   exit
 fi
 # Back up ~/.icons
 if [ -d ~/.icons ]
 then
-  echo "Backing up ~/.icons directory to ~/.icons_backup"
-  mv ~/.icons ~/.icons_backup
+  echo "Backing up ~/.icons directory to ~/.dotfiles-xfce/backup/"
+  mv ~/.icons ~/.dotfiles-xfce/backup/
   exit
 fi
 # Back up ~/.themes
 if [ -d ~/.themes ]
 then
-  echo "Backing up ~/.themes directory to ~/.themes_backup"
-  mv ~/.themes ~/.themes_backup
+  echo "Backing up ~/.themes directory to ~/.dotfiles-xfce/backup/"
+  mv ~/.themes ~/.dotfiles-xfce/backup/
   exit
 fi
 
