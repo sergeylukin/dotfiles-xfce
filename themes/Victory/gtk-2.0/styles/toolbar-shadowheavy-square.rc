@@ -1,0 +1,27 @@
+style "toolbarbutton-prelight"
+{
+	xthickness					= 0
+	ythickness					= 0
+
+	GtkButton::inner-border				= { 3, 3, 1, 1 }
+	bg[NORMAL]					= shade (0.8, @bg_color)				#For Toggle Buttons (Totem Sidebar)
+	bg[PRELIGHT]					= shade (0.9, @bg_color)				#Prelight bg of buttons
+	bg[ACTIVE]					= shade (0.81, @bg_color)				#Color when clicked
+
+#	bg[INSENSITIVE]					= @bg_color						#Inactive button text/borders, toggle buttons, optionmenu
+
+	text[INSENSITIVE]				= shade (0.8, @bg_color)
+
+	engine "murrine"
+	{
+		contrast				= 0.2
+		border_colors				= {shade (0.95, @bg_color),shade (0.9, @bg_color)}
+		roundness				= 3
+		gradient_shades				= {1.09,1.02,0.99,0.96}#{0.96,0.99,1.03,1.08}					#{1.4,1.15,1.1,0.98}#{0.98,1.0,1.05,1.1}
+		comboboxstyle				= 0
+#		glow_shade				= 0.1
+#		glowstyle				= 4
+		focus_color				= shade (0.8, @bg_color)				#For accessibility
+		focusstyle				= 2							#For accessibility
+        }
+}

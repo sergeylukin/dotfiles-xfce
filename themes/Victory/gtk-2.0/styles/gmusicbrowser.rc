@@ -1,0 +1,79 @@
+style "gmus"
+
+{
+	xthickness					= 0								#For Thunar
+	ythickness					= 0								#For Thunar
+
+#	font_name					= "Regular 10"
+
+#	bg_pixmap[NORMAL]				= "Images/buttonprelight.png"
+
+	GtkWidget	:: focus-padding		= 0								#Takes away space between Trash and Bookmarks
+	GtkWidget	:: focus_line_width		= 1								#Adds spacing between icons and text
+	GtkTreeView	:: horizontal_separator		= 12								#Padding to the left
+	GtkTreeView	:: vertical_separator		= 1								#Padding between each place
+	GtkTreeView	:: expander-size		= 8
+
+	GtkTreeView	:: even-row-color		= @selected_bg_color
+	GtkTreeView	:: odd-row-color		= shade (0.94, @selected_bg_color)
+
+	GtkTreeView	:: image-spacing		= 6
+
+	bg[NORMAL]					= @bg_color
+	bg[PRELIGHT]					= "green"
+	base[ACTIVE]					= "blue"
+	base[SELECTED]					= "yellow"
+	base[NORMAL]					= "purple"
+	base[INSENSITIVE]				= "orange"
+	text[INSENSITIVE]				= "black"
+	text[NORMAL]					= "red"
+	text[ACTIVE]					= "pink"
+	text[PRELIGHT]					= shade (1.15, @selected_fg_color)				#Prelight for Expander Triangles (Thunar)
+	fg[NORMAL]					= @fg_color
+	
+	bg[SELECTED] = @tooltip_bg_color
+	fg[PRELIGHT]					= shade (1.2, @tooltip_fg_color)				#For Information Pane
+
+	engine "murrine"
+	{
+		contrast				= 0.0
+		gradient_shades				= {0.97,1.0,1.0,0.97}						#{0.97,0.99,1.02,1.09}
+#		expanderstyle				= 0
+	}
+}
+
+#gmusicbrowser - itunes
+widget "*HBIndic*" style:highest "gmus"
+widget "*MBlist*" style "gmus"
+
+widget "*fp_list_src.VBfpane3*FilterPane*GtkTreeView" style "sidebar"
+#widget "*VBmain.HPfp_list.HPfp0.FilterPane*GtkTreeView" style "sidebar"
+
+#gmusicbrowser - quodlibet
+widget "*HBmenu*" style "gmus"
+
+#gmusicbrowser - Rhythmbox
+widget "*VBMain*VBSidebar.VPListAndQueue*GtkTreeView" style "sidebar"
+
+#gmusicbrowser - Exaile
+widget "*VBMain*VBSidebar.NBSidebar*GtkTreeView" style "sidebar"
+
+#gmusicbrowser - List Library Context
+
+#widget "*TBRight.VPRight.HPfp*.FilterPane*GtkTreeView*" style "sidebar"
+widget "*VBmain*HPmain.VBLeft*PlayList*GtkTreeView" style "sidebar"
+
+#gmusicbrowser - Playlist Library Context
+
+#widget "*TBRight.VPRight.HPfp*.FilterPane*GtkTreeView*" style "sidebar"
+widget "*VBmain*HPBottom.VBLeft*SongList*GtkTreeView" style "sidebar"
+
+
+
+
+#quodlibet-like
+widget "*VBmain.HPbrowser.FilterPane*GtkTreeView" style "sidebar"
+
+#queue
+widget "*VBmain.HPBottom.VBLeft.QueueList*GtkTreeView" style "sidebar"
+widget "*VBmain.HPfp_list.HPfp0.FilterPane*GtkTreeView" style "sidebar"

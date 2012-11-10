@@ -1,0 +1,23 @@
+style "nautilus-gnome-view" =  "default"
+{
+	ythickness				= 1
+	xthickness				= 1
+
+	GtkTreeView		:: even-row-color	= @base_color
+	GtkTreeView		:: odd-row-color	= shade (0.9, @base_color)
+
+	engine "murrine"
+	{
+		contrast			= 0.165
+	}
+
+}
+
+style "sidebar-divider"
+{
+	GtkPaned	:: handle-size			= 5								#Seperator between Sidebar and Main File View
+}
+
+widget		"*Nautilus*FMListView*GtkTreeView"					style:rc	"nautilus-gnome-view"
+widget_class	"*Nautilus*IconView*"							style		"nautilus-gnome-view"
+widget_class	"*FSpot*Photo*<GtkEventBox>*"						style		"nautilus-gnome-view"

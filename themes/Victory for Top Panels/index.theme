@@ -1,0 +1,12 @@
+[Desktop Entry]
+Type=X-GNOME-Metatheme
+Name=Victory for Top Panels
+Comment=Victory (Strikes Again) Theme for Top Panels
+Encoding=UTF-8
+
+[X-GNOME-Metatheme]
+GtkTheme=Victory for Top Panels
+MetacityTheme=Victory for Top Panels
+IconTheme=Victory Icon Collection
+CursorTheme=DMZ-White
+ButtonLayout=:minimize,maximize,close

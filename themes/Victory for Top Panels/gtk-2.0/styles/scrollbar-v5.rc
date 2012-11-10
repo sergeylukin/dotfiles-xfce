@@ -1,0 +1,39 @@
+style "scrollbar"
+{
+	GtkScrollbar	:: has-backward-stepper		= 1
+	GtkScrollbar	:: has-forward-stepper		= 1					#Hack for OpenOffice (& LibreOffice?) Bug
+												#OpenOffice won't theme its scrollbars unless arrow button steppers are used.
+												#By setting this to 1, and stepper size to 1,
+												#it makes them look nearly invisible, while making OpenOffice work.
+	GtkScrollbar	:: has-secondary-backward-stepper	= 0
+	GtkScrollbar	:: has-secondary-forward-stepper	= 0
+	GtkRange	:: trough-under-steppers		= 0
+	GtkRange	:: stepper-size				= 1#20				#ArrowButtonSize: Up (Up) Down (Down) Left Right (Left Right) (B A Select Start)
+	GtkRange	:: arrow-scaling 			= 0.45
+
+	GtkRange	:: trough-border		= 0
+
+	GtkScrollbar	:: fixed-slider-length		= 0				#1
+	GtkRange	:: slider-width			= 11
+	GtkScrollbar	:: min-slider-length		= 55				#85
+
+
+	bg[SELECTED]					= shade (1.1, @tooltip_bg_color)			#Color of Scrollbar
+	bg[NORMAL]					= shade (0.9, @bg_color)					#For Handles & Stepper Background
+
+	fg[NORMAL]					= mix(0.45, @bg_color, shade (1.3, @fg_color))					#Stepper Color
+	fg[INSENSITIVE]					= mix(0.9, @bg_color, shade (1.3, @fg_color))					#Stepper Color
+
+	engine "murrine"
+	{
+		trough_shades				= { 0.9746, 0.9746 }
+		gradient_shades				= {1.0,1.0,1.0,1.0}#{1.1,1.05,1.0,0.96}
+		contrast				= 0.0
+		roundness				= 0
+		scrollbarstyle				= 0								#Enable or disable circles, stripes, handles
+		border_colors				= { shade (0.80, @tooltip_bg_color), shade (0.8, @tooltip_bg_color) }
+		stepperstyle				= 1								# 0 = standard, 1 = integrated handles, 2 = unknown
+prelight_shade = 1.8
+  	}
+}
+

@@ -1,0 +1,112 @@
+/* gnome-terminal */
+TerminalScreen {
+    -TerminalScreen-background-darkness: 0.95;
+
+    background-color: rgba (37, 37, 37, 1.0);
+
+    color: @tooltip_fg_color;
+}
+
+
+TerminalWindow,
+TerminalWindow.background {
+    background-color: #323232;
+
+    color: @tooltip_fg_color;
+}
+
+/* notebook */
+
+TerminalWindow .notebook {
+    background-image: none;
+    background-color: #323232;
+    border-radius: 3;
+
+    -adwaita-border-gradient: -gtk-gradient (linear, left top, right top,
+                                           from (shade (@dark_bg_color, 0.93)),
+                                           to (shade (@dark_bg_color, 0.93)));
+}
+
+TerminalWindow .notebook tab {
+    background-image: -gtk-gradient (linear, left top, left bottom,
+                                     from (shade (@dark_bg_color, 0.92)),
+                                     color-stop (0.60, shade (@dark_bg_color, 0.9)),
+                                     to (shade (@dark_bg_color, 0.85)));                   
+    padding: 0;
+
+    color: @dark_fg_color;
+}
+
+TerminalWindow .notebook tab:active {
+    background-image: -gtk-gradient (linear, left top, left bottom,
+                                     from (shade (@dark_bg_color, 1.5)),
+                                     to (shade (@dark_bg_color, 1.42)));
+}
+
+TerminalWindow .notebook .button,
+TerminalWindow .notebook .button:active  {
+    background-image: -gtk-gradient (linear, left top, right top,
+                                    from (shade (@dark_bg_color, 1.08)),
+                                    to (shade (@dark_bg_color, 0.92)));
+
+    -adwaita-border-gradient: -gtk-gradient (linear, left top, right top,
+                                           from (shade (@dark_bg_color, 0.9)),
+                                           to (shade (@dark_bg_color, 0.9)));
+}
+*/
+/* Scrollbars */
+
+TerminalWindow .scrollbar.trough {
+    background-image: -gtk-gradient (linear, left top, right top,
+                                    from (shade (@dark_bg_color, 0.9)),
+                                    to (shade (@dark_bg_color, 0.95)));
+}
+
+TerminalWindow .scrollbar.slider,
+TerminalWindow .scrollbar.button,
+TerminalWindow .scrollbar.button:insensitive {                     
+    background-image: -gtk-gradient (linear, left top, right top,
+                                    from (shade (@dark_bg_color, 1.6)),
+                                    to (shade (@dark_bg_color, 1.3)));
+
+	border-color: @dark_bg_color;
+}
+
+TerminalWindow .scrollbar.slider:prelight
+{                     
+    background-image: -gtk-gradient (linear, left top, right top,
+                                    from (shade (@dark_bg_color, 1.8)),
+                                    to (shade (@dark_bg_color, 1.5)));
+	border-color: @dark_bg_color;
+}
+
+
+/* 
+ * 
+TerminalWindow .scrollbar {
+    border-radius:  20;
+
+    -adwaita-border-gradient: -gtk-gradient (linear, left top, left bottom,
+                                           from (shade (@dark_bg_color, 0.74)),
+                                           to (shade (@dark_bg_color, 0.74)));
+}
+* 
+TerminalWindow .scrollbar.slider.horizontal,
+TerminalWindow .scrollbar.slider.horizontal:prelight,
+TerminalWindow .scrollbar.button.horizontal,
+TerminalWindow .scrollbar.button:insensitive {                                   
+    background-image: -gtk-gradient (linear, left top, left bottom,
+                                    from (shade (@dark_bg_color, 1.08)),
+                                    to (shade (@dark_bg_color, 0.92)));
+
+    -adwaita-border-gradient: -gtk-gradient (linear, left top, left bottom,
+                                           from (shade (@dark_bg_color, 0.74)),
+                                           to (shade (@dark_bg_color, 0.74)));
+}
+
+TerminalWindow .scrollbar.trough.horizontal {
+    background-image: -gtk-gradient (linear, left top, left bottom,
+                                    from (shade (@dark_bg_color, 0.9)),
+                                    to (shade (@dark_bg_color, 0.95)));
+}
+ */

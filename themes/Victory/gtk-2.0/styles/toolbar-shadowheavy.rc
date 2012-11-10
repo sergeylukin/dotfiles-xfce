@@ -1,0 +1,134 @@
+style "toolbar"
+{
+	xthickness					= 1
+	ythickness					= 1
+
+	GtkToolbar::internal-padding			= 3
+
+	GtkArrow::arrow-spacing				= 0
+	GtkArrow::arrow-scaling				= 0.6
+
+	bg[NORMAL]					= @bg_color
+	bg[PRELIGHT]					= @bg_color
+
+	fg[NORMAL]					= mix (0.87, @fg_color, shade (1.0, @bg_color))		#Text color of active toolbar buttons
+	fg[PRELIGHT]					= mix (0.92, @fg_color, shade (1.0, @bg_color))
+	fg[INSENSITIVE]					= shade (0.8, @bg_color)
+
+	engine "murrine"
+	{
+		toolbarstyle				= 1							# 0 = flat, 1 = glassy, 2 = gradient
+		contrast				= 0.0
+		gradient_shades				= {0.7,0.85,0.95,1.005}
+		glow_shade				= 1.0
+		glowstyle				= 1					# 0top, 1bottom, 2top&bottom, 3horizontal, 4centered glow
+        }
+}
+
+style "toolbarbutton-gtkrcprelight"
+{
+	xthickness					= 0
+	ythickness					= 0
+
+#	GtkButton	:: child-displacement-x		= 0							#Changes position of pressed or active buttons
+#	GtkButton	:: child-displacement-y		= -1							#Changes position of pressed or active buttons
+
+	GtkButton::inner-border				= { 3, 3, 1, 1 }
+	bg[NORMAL]					= @bg_color						#For Toggle Buttons (Totem Sidebar)
+#	bg[PRELIGHT]					= shade (0.1, @bg_color)				#Prelight bg of buttons
+	bg[ACTIVE]					= shade (1.015, @bg_color)				#Color when clicked
+
+#	bg[INSENSITIVE]					= @bg_color						#Inactive button text/borders, toggle buttons, optionmenu
+
+	text[INSENSITIVE]				= shade (0.94, @bg_color)
+
+	engine "murrine"
+	{
+		contrast				= 0.3
+		roundness				= 3
+		gradient_shades				= {1.08,1.03,0.99,0.92}					#{1.4,1.15,1.1,0.98}#{0.98,1.0,1.05,1.1}
+		comboboxstyle				= 0
+#		glow_shade				= 0.1
+#		glowstyle				= 4
+		focus_color				= shade (0.8, @bg_color)				#For accessibility
+		focusstyle				= 2							#For accessibility
+		border_colors				= {shade (1.5, @bg_color),shade (0.8, @bg_color)}
+        }
+}
+
+#Toolbar button prelight
+style "toolbarbutton-prelight"
+{
+	xthickness					= 0
+	ythickness					= 0
+
+	GtkButton::inner-border				= { 2, 3, 1, 1 }
+
+#	GtkButton	:: child-displacement-x		= 0						#Changes position of pressed or active buttons
+#	GtkButton	:: child-displacement-y		= 0
+
+	bg[NORMAL]					= @bg_color
+	bg[PRELIGHT]					= shade (1.045, @bg_color)				#Prelight bg of buttons
+	bg[INSENSITIVE]					= @bg_color						#Inactive button text/borders, toggle buttons, optionmenu
+	bg[ACTIVE]					= shade (1.045, @bg_color)
+
+	text[INSENSITIVE]				= shade (0.94, @bg_color)
+
+	engine "murrine"
+	{
+		contrast				= 0.0
+		gradient_shades				= {0.76,0.89,0.93,0.987}
+		roundness				= 30
+#		border_colors				= {mix (0.5, @bg_color, shade (1.059, @bg_color)),mix (0.5, @bg_color, shade (1.059, @bg_color))}
+		border_shades				= { 0.71, 0.97 }
+		glow_shade				= 2.5
+#		lightborderstyle			= 0
+#		reliefstyle				= 2
+		glowstyle = 4
+	}
+}
+
+style "toolbarcombobox-flat" = "default"
+{
+
+	xthickness 					= 3
+
+	bg[NORMAL]					= shade (0.92, @bg_color)
+	bg[PRELIGHT]					= shade (0.96, @bg_color)
+	bg[SELECTED]					= @bg_color
+	bg[ACTIVE]					= @bg_color						#Color of button when pushed, Combobox arrow background.
+
+	text[INSENSITIVE]				= shade (0.8, @bg_color)
+	text[NORMAL]					= @fg_color
+	text[PRELIGHT]					= @fg_color
+
+	engine "murrine"
+	{
+		contrast				= 0.0
+		roundness				= 3
+		gradient_shades				= {0.92,1.05,1.0,0.97}					#{1.4,1.15,1.1,0.98}#{0.98,1.0,1.05,1.1}
+		comboboxstyle				= 0
+		border_colors				= {@bg_color,shade (0.86, @bg_color)}
+        }
+}
+
+style "nautiluselementary-modebutton" = "toolbarcombobox-flat"
+{
+	bg[NORMAL]					= shade (0.85, @bg_color)
+	bg[PRELIGHT]					= shade (0.85, @bg_color)
+	bg[SELECTED]					= shade (0.85, @bg_color)
+
+
+	engine "murrine"
+	{
+		contrast				= 0.2
+		roundness				= 2
+		gradient_shades				= {1.08,1.05,1.08,1.0}					#{1.4,1.15,1.1,0.98}#{0.98,1.0,1.05,1.1}
+		comboboxstyle				= 0
+		border_colors				= {shade (0.7, @bg_color),shade (0.8, @bg_color)}
+        }
+}
+
+widget_class "*<GtkToolbar>*<GtkSeparatorToolItem>*"					style	"handle"
+widget		"*Nautilus*GtkToolbar.GtkToolItem.GtkModeButton*"			style	"nautiluselementary-modebutton"
+widget		"*gtksharp*13*PlayerInterface*Toolbar*Button"				style	"toolbarbutton-gtkrcprelight"

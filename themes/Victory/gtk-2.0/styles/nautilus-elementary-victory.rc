@@ -1,0 +1,15 @@
+style "nautilus-elementary-view" =  "nautilus-view"
+{
+	ythickness				= 0
+	xthickness				= 0
+
+	engine "murrine"
+	{
+		contrast			= 0.165
+	}
+
+}
+
+widget		"*Nautilus*FMListView*GtkTreeView"					style		"nautilus-elementary-view"
+widget_class	"*Nautilus*IconView*"							style		"nautilus-elementary-view"
+widget_class	"*FSpot*Photo*<GtkEventBox>*"						style		"nautilus-elementary-view"

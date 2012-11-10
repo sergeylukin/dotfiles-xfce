@@ -1,0 +1,56 @@
+/* On-screen Keyboard */
+
+#keyboard {
+    background: rgba(39,39,39,0.65);
+}
+
+.keyboard-layout {
+    spacing: 10px;
+    padding: 10px;
+}
+
+.keyboard-row {
+    spacing: 15px;
+}
+
+.keyboard-key {
+    min-height: 30px;
+    min-width: 30px;
+    background-gradient-start: rgba(220,220,220,0.7);
+    background-gradient-end: rgba(67,67,67,0.95);
+    background-gradient-direction: vertical;
+    font-size: 14pt;
+    font-weight: bold;
+    border-radius: 10px;
+    border: 0px solid #757575;
+    color: white;
+}
+
+.keyboard-key:grayed {
+   color: #808080;
+   border-color: #808080;
+}
+
+.keyboard-key:checked,
+.keyboard-key:hover {
+    background-gradient-start: rgba(245,245,245,0.85);
+    background-gradient-end: rgba(95,95,95,0.95);
+    background-gradient-direction: vertical;
+    border: 0px solid white;
+}
+
+.keyboard-key:active {
+    background: #808080;
+}
+
+.keyboard-subkeys {
+    color: white;
+    padding: 5px;
+    -arrow-border-radius: 10px;
+    -arrow-background-color: #090909;
+    -arrow-border-width: 2px;
+    -arrow-border-color: white;
+    -arrow-base: 20px;
+    -arrow-rise: 10px;
+    -boxpointer-gap: 5px;
+}

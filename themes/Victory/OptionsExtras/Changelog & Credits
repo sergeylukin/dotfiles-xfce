@@ -1,0 +1,498 @@
+Part 1: Changelog
+Part 2: Screenshot Credits
+
+
+Part 1: Changelog
+-------------------------------------------------------------------
+2012.3.16 (v11)
+-------------------------------------------------------------------
+
++ New: Gnome-Shell Theme
++ New: Gtk3/Gnome3 Theming (Beta)
++ New: Cinnamon Theme
++ New: Support for Mate Desktop Environment
++ New: Victory for Top Panels
+-- Altered panel backgrounds and metacity window border
+-- Window border becomes flat when maximized, blending Top Panel and Window Border
+-- Works with Gnome 3, Gnome 2, Ubuntu, Cinnamon, Mate by default
+-- Works with LXDE, XFCE when using Compiz
+-- Remember to log out and back in after selecting this theme to see the changes
++ New: Marlin File Browser themed
++ New: GMusicBrowser themed
++ New: Support for Overlay Scrollbars
++ Updated: Latest apps in Gnome (Rhythmbox, Totem), LXDE (PCManFM, Parole), and XFCE
++ Updated: Unity Panel for Ubuntu 11.10
++ Option Added: Ambiance-like toolbars for Gtk3/Gnome3 (Ubuntu 11.10+)
+-- This makes the toolbar dark, blending with the File Menu bar and/or the Title bar of the window border
+-- Scroll to the bottom of the file: Victory > gtk-3.0 > gtk.css
+-- Under "Options" and uncomment the ambiance-toolbars line.
+-- Should look like this: @import url("styles/ambiance-toolbars.css");
+-- Save, then log out and back in.
++ Changed: To avoid clutter, additional Window Borders (Dark and Variants) not added to .themes folder by default
+-- All borders can befound in Victory > OptionsExtras > Extra Window Borders
+-- Just drag them to your home/yournamehere/.themes folder, and select them in your window manager (may require restart)
+
+
+-------------------------------------------------------------------
+2011.05.23 (v10)
+-------------------------------------------------------------------
+
+This is a pretty massive update of things I've been playing with for some time now - updates for XFCE, LXDE, Gnome 2, Gnome 3, and Ubuntu 11.04. I've reworked a lot of things, some completely, including the dark panels, dark menus, window borders, and pathbar breadcrumb expanders. This is now a full XFCE and LXDE theme, as both have recieved updates and fixes, as well as a complete set of window borders for both. The theme has also been updated for Ubuntu 11.04's Unity Panel and Indicator Applet, and I've started the work on creating a Gnome 3 version of the theme. The Gnome 3 theme is in what might be called alpha-stage - it's a little rough and early, but it should blend well with existing Gtk 2 apps. The Opera theme has been updated*, and new Google Chrome/Chromium themes have been added. The Victory Icon Theme has been updated quite a bit with a whole new set of monochrome panel/indicator applet icons (Pithos, Transmission, Weather Indicator) for dark panels. Read the included Changelog for a few more details.
+
+The Opera theme has to be reviewed before it's published on the Opera site... so those who use Opera (all 3 of us) may have to wait a few days for that.
+
+Victory for Opera Light:	http://my.opera.com/community/customize/skins/info/?id=11102
+Victory for Opera Dark:		http://my.opera.com/community/customize/skins/info/?id=11092
+Victory for Chrome/Chromium:	http://newhoa.deviantart.com/#/d3h2991
+Victory Icon Collection:	http://newhoa.deviantart.com/art/Victory-Icon-Collection-188206119
+
+++ Reworked: Dark Panel
+++ Reworked: Dark Menus
+++ Reworked: Pathbar breadcrumbs: + Button shows more breadcrumbs
+++ Added: XFCE/xfwm Window Borders
+++ Added: LXDE/Openbox Window Borders
+++ Added: Google Chrome/Chromium Themes
+++ Added: Gnome 3 Theme - In an incomplete 'alpha' stage
+++ Updated: Gnome/Metacity - Window Borders
+++ Updated: XFCE/LXDE - Themed a lot of unthemed stuff
+++ Updated: Firefox 4 tab bar as best I could
+++ Updated: Ubuntu 11.04 - Unity panel and Indicator Applet (Calendar)
+++ Updated: Opera Theme
+++ Updated: Icon Theme - Added all new panel/indicator icons for dark panels (and more)
+++ Added Options: elementary style scrollbars
+++ Added Options: All previous Victory styles can now be enabled
+++ General app updates (Chrome/Chromium, Banshee, etc) and bug fixes
+
+
+
+
+
+++ Color Changes
+ + Blue is back as the new default selected (and sidebar) color
+ + Got rid of yellow/blue tints everywhere else
+ - This makes everything grey greyscale, including:
+ -- Window Borders
+ -- Menus
+ -- Menubars
+ -- Panel
+
+++ XFCE 4.6 & 4.8
+ + Added Window Borders - Light and Dark
+ - Based on Shiki Colors and Candido Redux
+ + Parole Media Player now themed
+ + Updated panel theming
+ + General XFCE fixes/updates
+ + Very impressed
+ - Awesome Job XFCE guys!
+
+++ LXDE and Openbox
+ + Added Window Borders - Light and Dark
+ - Based on Concrete and Nova-Blue
+ - Window border right click matches dark menus
+ + General LXDE fixes/updates
+
+++ Dark Panel
+ + Revamped all panel code
+ - Default panel lightened and a bit smoother
+ - Other panel styles available under Options
+
+++ Dark Menus
+ + Updated to look a bit smootherer
+ + Updated Cardapio
+ + Updated Dark Scrollbars
+
+++ Scrollbars
+ + Updated
+ - Should look a bit lighter, more sharp, and more easy to notice when hovered over.
+
+++ Pathbar
+ + Plus Arrows are now used to show more tabs
+ - Previously it was just another breadcrumb arrow
+
+++ Google Chrome/Chromium
+ + Added Theme/Window Border
+ - One for Compact Borders, one for Gtk Borders
+ + Updated to properly theme without using the new custom themes
+ - Previously it had fixed colors
+ - Should now follow tooltip colors like the rest of the gtk menubars
+
+++ Firefox
+ + Updated tab bar for Firefox 4 (as well as I know possible)
+ - Now arrows for more are light, disabled arrows are almost invisible
+ - Menu button is dark to match background
+
+++ Opera
+ + Matches new window border color
+ + Tabs redone to look a bit cleaner
+ + View bar and infobars (for passwords/plugins/etc) updated
+ - Now bars that appear under location bar look integrated into location bar
+ + Sidepane when toggle is on has been updated to blend in with the rest of the panel
+ + Cleaner lines everywhere
+
+++ Unity Panel for Ubuntu
+ + Text issues fixed
+ + Selected Global Menu stuff fixed
+ + Unity uses slightly lighter panel
+ - This way, when windows are maximized, they blend in to the Unity Panel
+
+++ Gnome 3 (Gtk3) Theme
+ + Initial release of Gtk3 version
+ + Base code from Gnome 3's Adwaita theme
+ + Sidebars, scrollbars, buttons, menus (light and dark) themed to match Gtk2 theme
+
+++ Indicator Applets
+ + Calendar now looks integrated
+
+++ File-Roller and xarchiver (Archive Managers)
+ + Sidebars themed
+
+++ Added Options
+ + All previous Victory styles
+ - This allows anyone to revert back to previous versions
+ + elementary options
+ - elementary Scrollbars recreated using Murrine engine
+ - Nautilus - make icon view white like elementary theme
+ + Gnome style
+ - Nautilus looks more like default gnome
+ -- White Icon view, divider between Icon View and Sidepane
+ + Midori
+ - Makes location bar look like part of window border
+ + Panels
+ - Option for people who use only a top panel - a little more smooth
+ - Dark Murrine panel redone
+
+
+
+-------------------------------------------------------------------
+2011.04.03 (v9)
+-------------------------------------------------------------------
+
+++ New
++ Opera Theme!
+ - Light Version to match default
+ -- http://my.opera.com/community/customize/skins/info/?id=11102
+ -- Also closely matches New Wave border
+ - Dark Version
+ -- http://my.opera.com/community/customize/skins/info/?id=11092
+ -- Also matches default dark Ubuntu theme border (Ambiance)
+ -- Also matches Divergence IV border
+
+++ General
++ Cardapio menu is now completely dark (thanks tvst!)
++ Menus - Colors changed to more closley match rest of theme
++ Panel - Dark Murrine Panel colors changed
+ - Now more similar to colors of menus
+ - Now more similar to default dark pixmap panel
++ Pathbar
+ - Far left arrow removed and replaced with + when hovering
++ Icon Theme
+ - Changed Playback, Image Transformation, Undo Redo Icons
+ - Added Zoom, Fullscreen, Copy Cut Paste Icons
+ - Changed Panel Indicator Icons
+
+
+-------------------------------------------------------------------
+2011.03.18 (v8)
+-------------------------------------------------------------------
+
+New
++ Added Dark Panels as default *
++ Added Dark Menus as default *
++ Added Options Section *
+
+General
++ Merged Victory and the Victory Elementary version into one theme. *
++ Window Border (Light) tweaked, new minimize button
++ Window Borders split from theme, defaults to Light border
+- For Dark border, just adjust the Tooltip Colors, and pick the dark border.
++ Sidebar color now grey by default
+- You can still easily change it by adjusting the Selected Items colors.
++ New Close Button on Tabs
++ Changed look of Dropdown boxes in toolbars
++ Scrollbars tweaked
++ Panel code redone
+- Should now work great with gnome-color-chooser
++ Got rid of custom pixmap triangle expanders
+-  Now uses Murrine default
+-   Triangle Expanders if you use Murrine 0.98+ (Ubuntu 10.10)
+-   +/- buttons if you use a Murrine under 0.98 (Ubuntu 10.04)
++ Icon theme suggests Victory Icon Collection
+-  http://newhoa.deviantart.com/art/Victory-Icon-Collection-188206119
+-  It's fairly incomplete for now, so use whatever
++ General updates and fixes
+
++ Updated to fix a few things. (2011.03.19)
+ - Increased size of triangle expanders in Nautilus Treeview
+ - Fixed window border button problem
+ - Added extra window border (just the old Victory Elementary border)
+
+
+
+* Options:
+
+! All new options can be enabled/disabled in the gtkrc file (/home/yourname/.themes/Victory/gtk-2.0/gtkrc) at the bottom under "Options"
+! Uncomment means take the # away from the beginning of the line. Comment means add a # at the beginning of the line.
+
++ 1) Panels - Comment one line or the other to switch between the default pixmap version, and Murrine version.
++ 1) Panels - Comment both panel lines to go back to light panel.
++ 2) Menus - Comment the darkmenu.rc line to go back to light menus.
++ 3) Nautilus Elementary - Uncomment if you use Nautilus Elementary (this just makes the borders lighter/nicer)
++ 4) Toolbar Buttons - Uncomment to return to round lighted toolbar buttons.
++ 6) Toolbar - Uncomment both lines to use the toolbars seen in the latest screenshot.
++ Various test styles I was playing with. Comment or Uncomment to play around with different combinations.
+
+
+-------------------------------------------------------------------
+2010.12.02 (v7)
+-------------------------------------------------------------------
+
+New
++ Victory Icon Collection
+-- http://newhoa.deviantart.com/art/Victory-Icon-Collection-188206119
+-- Icon collection/modification using NuoveXT and elementary icons.
+-- Leave comments here or at the link above, if people seem interested, I'll try to continue to fix/improve it.
+
+General
++ Small adjustments and fixes
+-- Toolbar has a little less padding
+-- Toolbar prelight lighter
+-- Volume slider a little bigger
+-- Sidebar triangle expanders smaller and softer
+-- Expander triangles softer
+-- Scrollbars lighter
+-- Panel fixes
+
++ Updates for new/updated Apps
+-- Banshee
+-- mintMenu
+-- Shotwell
+-- Google Chrome (title bar colors now match window border)
+
+
+-------------------------------------------------------------------
+2010.08.08 (v6)
+-------------------------------------------------------------------
+
+Victory Elementary
++ New Default Colors
++ New Window Border
+-- New Colors
+-- New Buttons
+
+General (Both Victory and Victory Elementary)
++ Menus made a bit smaller/shorter
++ Toolbar top and bottom padding reduced
++ Toolbar prelight glow - brightness increased
++ Volume sliders more consistent
++ Sidebar scrollbars made to match other scrollbars, 1px wider
++ Updated for new releases: Cardapio/Banshee/Software Center
++ Expanders
+-- Softened sidebar expanders
+-- Changed some Tree View stuff *
+--- This should improve the look of Transmission & other apps
++ Just more small stuff
+
+* Last time I changed the triangle expanders for consistency throughout the theme. However, changing treeview expanders also changed treeview gradients/progress bars/checkmarks/dots/everything in treeview. Regardless of whether the treeview used expanders or not, it still distorted the look. Now there may be some treeviews that use murrine, and some that use pixmap for the triangle expander. This may cause some treeviews to have murrine +/- expanders. In the newer releases of murrine, it will default to triangles, so in the future, even if I don't change this, it will look more consistent. Try a newer murrine in Ubuntu here: https://launchpad.net/~suraia/+archive/ppa
+
+
+-------------------------------------------------------------------
+2010.07.15 (v5)
+-------------------------------------------------------------------
+
+OpenOffice
++ No longer needs a scrollbar fix
+
+General
++ New Triangle Expanders
++ New Volume Sliders
++ Scrollbars changed
++ Menus shortened a bit
++ Buttons should look better when used as a dark theme
++ Tabs - may look better when used as a dark theme
++ Just other small stuff
+
+Small Victory - A New Compact Version of Victory with a Dark Panel
++ Different Default Colors
++ Suggests Moblin Icons
++ Everything very small
++ Dark Menus by default
+-- Menu colors controlled by Menubar/Tooltip colors
++ Dark Panel
+-- Dark Panels are fixed in color
+-- Use gnome-color-changer to change if you want
+
+
+-------------------------------------------------------------------
+2010.06.21 and 2010.06.22 (v4)
+-------------------------------------------------------------------
+
+Metacity Window Border
++ When Maximized, buttons now respond to clicks at top corners
++ X Button now has a brighter hover color
++ Buttons and Title text now better spaced
++ Removed bottom border when maximized
+
+Newly Themed
++ Synaptic
++ Gnome Control Center
++ SUSE Application Browser
++ CompizConfig Settings Manager (ccsm)
++ Evolution 2.28/2.30
+
+Panel
++ Entire Panel re-themed
++ Panflute themed
++ All Menus Themed
+- Gnome MenuBar
+- Gnome Main Menu
+- SUSE Slab (gnome-main-menu)
+- USP (Ubuntu System Panel)
+- mintMenu
+- Cardapio
+
+Fixes
++ Touched up a few things, including:
+- Scrollbar
+- Toolbar glow
+- Arrows everywhere scaled down a bit
+- Images on Buttons - Better spacing between action icons and text
++ Nautilus Sidebar Title:
+- Should be easier to read in more colors
++ Menu Items when Highlighted:
+- Should be easier to read when using very light selected background color with dark selected text color
++ Added gtk-auto-mnemonics
+- Will show lines under menubar items (File/Edit/etc) only when holding Alt.
+- See: http://blogs.gnome.org/thos/2009/12/21/my-first-major-gtk-patch/
+
++ Cardapio updated for 0.9.111+
+-- Special thanks to tvst for making gtkrc theming much easier!
+-- https://launchpad.net/cardapio
++ Google Chrome - Fixed some theme issues
+
+
+-------------------------------------------------------------------
+2010.05.21 (v3)
+-------------------------------------------------------------------
+
++ Colors - Should work better in more colors & as a dark theme due to the following 3 changes:
+- New Scrollbars
+- New Volume Slider
+- New Prelight
++ Sidebars - All colored sidepanes now use small scrollbars
++ Options - A few more options in the Option folder including:
+- gtkrc-old: Put this in place of gtkrc to get an idea of what the old version was like
+- OpenOffice Scrollbar Fix: Find this under Options > OpenOffice. Script from Wasp theme. Manual instructions included.
++ Default colors changed
++ Just other small stuff
+
+Gnome 2.28 version no longer updated. Find it here:
+http://gnome-look.org/content/show.php/Victory+%28Strikes+Again%29+for+Gnome+2.28?content=124224
+
+
+-------------------------------------------------------------------
+2010.05.05 (v2)
+-------------------------------------------------------------------
+
++ 3 Versions - One for Gnome 2.30, one for Gnome 2.28, one for Gnome 2.28 with Nautilus Elementary
++ Emblems in sidebar and properties dialog more compact
++ New sidebar scrollbar for Nautilus
++ Just small fixes
+
+
+-------------------------------------------------------------------
+2010.04.29 (v1)
+-------------------------------------------------------------------
+
++ Initial Release
+
+
+
+-------------------------------
+Original Description
+-------------------------------
+
+Something bothering me lately was that many of the newer themes being released seem to be 'locked.' That is to say, they have hard coded colors and elements. I wanted to make a theme that:
+
+1) Was not distracting.
+2) Was not boring.
+3) Was not completely ugly.
+4) Could be used with many Window borders, and any user chosen color.
+
+Having found success in only one of four goals*... It seems accomplished enough for me. VICTORY! (?) So pick any combination of colors, pick a window border, and enjoy.
+
+Any feedback would be great. I have never done anything like this, so there may be a lot of problems with it... Let me know what you think, what you like, what you dislike. Thanks!
+
+- Darin
+
+*Goal 3 met: only slightly ugly.
+
+The following applications are themed so far:
+
+Nautilus & Nautilus Elementary
+Thunar
+PCManFM
+Exaile
+Rhythmbox
+Banshee
+Totem
+F-Spot
+Eye of Gnome
+Firefox
+Google Chrome
+Ubuntu Software Center
+Evolution
+Open/Save Dialog
+Gnome Control Center
+SUSE Application Browser
+CompizConfig Settings Manager (ccsm)
+Synaptic
+Panel - Menus:		SUSE Slab (gnome-main-menu), Gnome Menu/Menubar, USP (Ubuntu System Panel), Cardapio, mintMenu
+Panel - Applets:	Panflute
+
+
+
+--------------------------------------------------------------------------------------------------------------------------------------
+
+
+
+
+---------------------------
+Part 2: Screenshots --------
+---------------------------
+
+
+Art I've used in Screenshots - Check them out!
+Please see the bottom of the gtkrc file for theme code/elements credits.
+
+** Icons **
+
+Elementary (elementary-monochrome) icons	http://danrabbit.deviantart.com/art/elementary-Icons-65437279
+NuoveXT 2.2 icons				http://nuovext.pwsp.net/
+Moblin Icons					http://packages.ubuntu.com/lucid/moblin-icon-theme
+
+
+** Window Borders **
+
+Elementary Window border			http://danrabbit.deviantart.com/art/elementary-gtk-theme-83104033
+Simple eGTK Window Border			http://gnome-look.org/content/show.php/Simple+eGTK?content=119812
+Ambiance Drakfire mod window border		http://gnome-look.org/content/show.php/Ambiance+Drakfire+Mod?content=124028
+Fresh Dark Gnome theme on DeviantArt		http://hcalves.deviantart.com/art/Fresh-Dark-Gnome-Theme-2-1-95737856
+K03 theme on Gnome-Look				http://gnome-look.org/content/show.php/K03?content=86417
+New Wave window border				http://gnome-look.org/content/show.php/new+wave?content=87134
+
+
+** Wallpaper **
+
+Spectrum by ~GRlMGOR				http://grlmgor.deviantart.com/art/Spectrum-81579475
+Color Inspire by ~ipapun			http://ipapun.deviantart.com/art/Color-Inspire-143684590?
+Flow and Gnome Desktop by tri5tian		http://gnome-look.org/usermanager/search.php?username=tri5tian&action=contents
+Hurrah Ubuntu by ~pr09studio			http://pr09studio.deviantart.com/art/Hurrah-Ubuntu-162917462			
+Default Ubuntu &Gnome Wallpapers		Authors unknown
+BosqueTK					Author unkown - Part of default Ubuntu 10.04 install
+AfterRain
+DVNO by *kon					http://kon.deviantart.com/art/DVNO-116185112
+Gnome 3 default Wallpaper			https://launchpad.net/~gnome3-team/+archive/gnome3/+sourcepub/1717622/+listing-archive-extra
+
+Special thanks to all these authors - it's all beautiful art.
+
+- Darin

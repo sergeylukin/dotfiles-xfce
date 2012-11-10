@@ -1,0 +1,193 @@
+style "default"
+{
+	xthickness					= 1
+	ythickness					= 1
+
+	GtkScrolledWindow::scrollbar-spacing		= 0
+	GtkScrolledWindow::scrollbar-within-bevel	= 1
+
+	fg[NORMAL]					= @fg_color
+	fg[PRELIGHT]					= @fg_color
+	fg[SELECTED]					= @selected_fg_color
+	fg[ACTIVE]					= @fg_color
+	fg[INSENSITIVE]					= shade (0.8, @bg_color)
+
+	bg[NORMAL]					= @bg_color
+	bg[PRELIGHT]					= @bg_color				# Prelight bg of buttons, radiochecks, 'more detail' triangles.
+												# Change for Accessibility
+	bg[SELECTED]					= shade (0.9, @selected_bg_color)
+	bg[INSENSITIVE]					= @bg_color				# Inactive button text/borders, toggle buttons, optionmenu
+	bg[ACTIVE]					= shade (0.9, @bg_color)
+
+	base[NORMAL]					= @base_color
+	base[PRELIGHT]					= shade (0.95, @bg_color)
+	base[ACTIVE]					= @selected_bg_color			# mix (0.5, @selected_bg_color, shade (1.0, @bg_color))
+	base[SELECTED]					= @selected_bg_color
+	base[INSENSITIVE]				= @bg_color
+
+	text[NORMAL]					= @text_color
+	text[PRELIGHT]					= @text_color
+	text[ACTIVE]					= @selected_fg_color			# shade (20.0, @base_color)
+	text[SELECTED]    				= @selected_fg_color			# shade (20.0, @base_color)
+	text[INSENSITIVE]				= shade (0.8, @bg_color)
+
+	engine "murrine"
+	{
+		arrowstyle				= 0
+		animation				= TRUE					# FALSE = disabled, TRUE = enabled
+		contrast				= 0.4					# 0.8 for less contrast, more than 1.0 for more contrast on borders
+#		glazestyle				= 3					# 0flat, 1curved, 2concave, 3top curve, 4beryl highlight
+		glow_shade				= 1.1
+		glowstyle				= 4					# 0top, 1bottom, 2top&bottom, 3horizontal, 4centered glow
+		gradient_shades				= {1.0,1.0,1.0,1.0}
+		highlight_shade				= 1.0
+		lightborderstyle			= 1					# 0 = lightborder on top side, 1 = lightborder on all sides
+		listviewheaderstyle			= 1					# 0 = flat, 1 = glassy, 2 = raised
+		listviewstyle				= 0					# 0 = nothing, 1 = dotted
+		reliefstyle				= 4					# 0 = flat, 1 = inset, 2 = shadow
+		rgba					= FALSE					# FALSE = disabled, TRUE = enabled
+		roundness				= 3					# 0 = Square. Higher increases roundness
+		focusstyle				= 3
+		focus_color				= shade (0.8, @bg_color)				#For accessibility
+	}
+}
+
+style "tabs-radiocheck" = "radiocheck"
+{
+	bg[PRELIGHT]					= mix (0.6, @bg_color, shade (1.60, @bg_color))
+	bg[SELECTED]					= mix (0.6, @bg_color, shade (1.60, @bg_color))		#Change for Accessibility (Keyboard Navigation)
+	bg[ACTIVE]					= mix (0.6, @bg_color, shade (1.60, @bg_color))
+
+	engine "murrine"
+	{
+		contrast				= 0.9
+		focus_color				= shade (0.85, @bg_color)
+	}
+}
+
+style "radiocheck"
+{
+	GtkCheckButton	:: indicator-size		= 14
+
+	fg[PRELIGHT]					= shade (0.7, @fg_color)
+	fg[INSENSITIVE]					= shade (0.9, @bg_color)
+
+	bg[PRELIGHT]					= @bg_color						# Hides prelight. Change for keyboard accessibility.
+	bg[SELECTED]					= @bg_color						# Checks and Dots Background. Hides selected Option.
+														# Change for keyboard accessibility. Was shade (0.90, @bg_color)
+
+	bg[NORMAL]					= @bg_color						# No Check and Dots - Border
+	base[NORMAL]					= shade (1.4, @bg_color)				# No Checks and Dots - Background
+
+
+	text[PRELIGHT]					= shade (1.7, @fg_color)				# Checks and Dots - Prelight
+	text[ACTIVE]					= shade (2.0, @fg_color)				# Checks and Dots - When Clicked
+	text[NORMAL]					= shade (1.2, @fg_color)				# Checks and Dots - Normal
+
+
+	engine "murrine"
+	{
+		contrast				= 0.9
+		focus_color				= shade (0.8, @bg_color)
+	}
+}
+
+######################## Buttons, Comboboxes, Option Menu, Entry Fields ########################
+
+style "button" = "wider"
+{
+#	xthickness					= 0
+#	ythickness					= 0
+
+	GtkButton	:: default-border		= { 0, 0, 0, 0 }
+#	GtkButton	:: inner-border			= {1,1,1,1}
+	GtkButton	:: child-displacement-x		= 1							#Changes position of pressed or active buttons
+	GtkButton	:: child-displacement-y		= 1							#Changes position of pressed or active buttons
+	GtkButton	:: image-spacing		= 6
+
+	GtkWidget	:: focus-line-width		= 0
+	GtkWidget	:: focus-padding		= 2
+
+	bg[NORMAL]					= shade (0.9, @bg_color)
+	bg[PRELIGHT]					= mix (0.565, @bg_color, shade (1.1, @selected_bg_color))#shade (0.96, @bg_color)
+	bg[ACTIVE]					= shade (0.95, @bg_color)				#Color of button when pushed. It's how bg[SELECTED] should look.
+	bg[INSENSITIVE]					= shade (1.0, @bg_color)
+	bg[SELECTED]					= shade (0.2, @bg_color)				#Color of button when active - default selected button.
+														#Bug? Why doesn't it color whole button? It's just an overlay,
+														# with a dark border within the button. It's ugly.
+
+	fg[NORMAL]					= @text_color						#For Thunar, Font on normal buttons (Bug? Shouldn't it use text[NORMAL])
+	fg[PRELIGHT]					= @text_color						#Arrow Prelight for Combobox
+	fg[INSENSITIVE]					= shade (0.9, @bg_color)				#Disabled arrow color for combobox. (Bug? Use text[INSENSITIVE])
+
+	text[INSENSITIVE]				= shade (0.8, @bg_color)
+	text[NORMAL]					= @fg_color						#For Combobox
+	text[PRELIGHT]					= @fg_color						#For Combobox
+
+	engine "murrine"
+	{
+		contrast				= 0.3
+		roundness				= 2
+		lightborderstyle			= 0 
+		gradient_shades				= {1.4,1.15,1.1,0.98}
+#		border_colors				= { shade (0.82, @bg_color), shade (0.82, @bg_color) }
+#		reliefstyle				= 4
+#		cellstyle				= 0 							#Hopefully this will work in the future
+										#For Extra Soft Buttons -	Contrast = 0.1 & gradient_shades = {1.2,1.15,1.1,0.98}
+										#For Soft Buttons -		Contrast = 0.2 & gradient_shades = {1.2,1.15,1.1,1.0}
+										#For Medium Buttons -		Contrast = 0.32 & gradient_shades = {1.2,1.15,1.1,0.98}
+										#For Hard Buttons -		Contrast = 0.8 & gradient_shades = {1.2,1.15,1.1,0.95}
+        }
+}
+
+style "combobox" = "button"
+{
+	xthickness 					= 5
+	ythickness 					= 4
+
+	GtkWidget	:: focus-padding		= 0
+	GtkArrow	:: arrow-scaling		= 0.55
+
+	fg[NORMAL]					= @fg_color						#For OptionMenu
+	fg[PRELIGHT]					= @fg_color						#For OptionMenu
+	bg[SELECTED]					= shade (0.8, @bg_color)				#Combobox - Handle BG and Selected Color (Tab)
+	fg[INSENSITIVE]					= shade (0.8, @bg_color)				#Bug - Option menu text, doesn't default or match "button"
+
+	engine "murrine"
+	{
+		contrast				= 0.3
+		roundness				= 2
+		gradient_shades				= {1.2,1.15,1.1,0.98}
+		focus_color				= shade (0.5, @bg_color)
+		comboboxstyle				= 1							# 0 = Solid Bar, 1 = Dropdown style
+		glow_shade				= 1.0
+		glowstyle				= 2							# 0 = top, 1 = bottom, 2 = top and bottom
+														# 3 = horizontal, 4 = centered glow
+        }
+}
+
+style "optionmenu" = "button"
+{
+	xthickness 					= 3
+	ythickness 					= 4
+
+	GtkWidget	:: focus-padding		= 0
+	GtkArrow	:: arrow-scaling		= 0.55
+
+	fg[NORMAL]					= @fg_color						#For OptionMenu
+	fg[PRELIGHT]					= @fg_color						#For OptionMenu
+	bg[SELECTED]					= shade (0.8, @bg_color)				#Selected color for Combobox
+	fg[INSENSITIVE]					= shade (0.8, @bg_color)				#Bug - Option menu text, doesn't default or match "button"
+
+	engine "murrine"
+	{
+		contrast				= 0.3
+		roundness				= 2
+		gradient_shades				= {1.2,1.15,1.1,0.98}
+		focus_color				= shade (0.5, @bg_color)
+		comboboxstyle				= 1							# 0 = Solid Bar, 1 = Dropdown style
+		glow_shade				= 1.0
+		glowstyle				= 2							# 0 = top, 1 = bottom, 2 = top and bottom
+														# 3 = horizontal, 4 = centered glow
+        }
+}

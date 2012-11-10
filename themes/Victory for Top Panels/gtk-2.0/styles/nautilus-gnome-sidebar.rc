@@ -1,0 +1,36 @@
+style "sidebar-gnome"
+
+{
+	xthickness					= 1								#For Thunar
+	ythickness					= 1								#For Thunar
+
+	bg[NORMAL]					= @bg_color
+
+
+	engine "murrine"
+	{
+		contrast				= 0.165
+		gradient_shades				= {0.97,1.0,1.0,0.97}#{0.97,0.99,1.02,1.09}
+#		expanderstyle				= 0
+	}
+}
+
+style "sidebar-divider"
+{
+	GtkPaned	:: handle-size			= 5								#Seperator between Sidebar and Main File View
+}
+
+
+style "sidebar-title-text" = "nautilus-toolbar-text"
+{
+	font_name					= "Regular 12"
+
+	fg[NORMAL]					= mix(0.50, @fg_color, @bg_color)
+	fg[ACTIVE]					= shade(1.2, @fg_color)
+	fg[PRELIGHT]					= mix(0.80, @fg_color, @bg_color)
+	fg[SELECTED]					= @fg_color
+	fg[INSENSITIVE]					= mix(0.85, @bg_color, @fg_color)
+}
+
+widget_class	"*NautilusPlacesSidebar*"						style:rc	"sidebar-gnome"
+widget_class	"*NautilusPlacesSidebar*TreeView"					style:rc	"sidebar-gnome"

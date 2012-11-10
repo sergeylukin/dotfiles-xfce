@@ -1,0 +1,83 @@
+style "small-scrollbar"
+{
+
+	GtkRange	:: slider_width		= 7
+
+	GtkScrollbar	:: fixed-slider-length	= 1
+	GtkScrollbar	:: min-slider-length	= 32
+
+	GtkScale	::trough-border		= 0							#Change to 0 for thinner slider
+	GtkScale	::slider-width		= 7							#Volume Slider Trough Size
+	GtkScale	::slider-length		= 14							#Volume Slider Length
+	GtkScale	::trough-side-details	= 0
+
+	GtkWidget	::focus-line-width	= 0
+	GtkWidget	::focus-padding		= 2
+
+
+	bg[SELECTED]			= shade (1.04, @bg_color)
+	bg[NORMAL]			= shade (1.04, @bg_color)
+	bg[ACTIVE]			= shade (0.92, @bg_color)
+	bg[PRELIGHT]			= "red"
+
+	engine "murrine" 
+	{
+		trough_shades		= { 0.81, 0.98 }
+		gradient_shades		= {0.97,0.93,1.02,1.11}
+		contrast		= 0.0
+		roundness		= 0
+		scrollbarstyle		= 0								#Enable or disable circles, stripes, handles
+		border_colors		= { shade (1.01, @bg_color), shade (1.05, @bg_color) }
+		prelight_shade		= 0.94
+  	}
+}
+
+style "scrollbar"
+{
+
+	GtkScrollbar	:: has-backward-stepper			= 0
+	GtkScrollbar	:: has-forward-stepper			= 1			#Hack for OpenOffice Bug
+											#OpenOffice won't theme its scrollbars unless arrow button steppers are used.
+											#By setting this to 1, and stepper size to 1,
+											#it makes them look nearly invisible, while making OpenOffice work.
+	GtkScrollbar	:: has-secondary-backward-stepper	= 0
+	GtkScrollbar	:: has-secondary-forward-stepper	= 0
+	GtkRange	:: trough-under-steppers		= 0
+	GtkRange	:: stepper-size				= 1			#Arrow Button Size - Up (Up) Down (Down) Left Right (Left Right) (B A Select Start)
+	GtkRange	:: arrow-scaling 			= 0.45
+
+	GtkRange	:: trough-border			= 0
+
+	GtkScrollbar	:: fixed-slider-length			= 0			#1
+	GtkRange	:: slider-width				= 13
+	GtkScrollbar	:: min-slider-length			= 50			#85
+
+
+	bg[SELECTED]			= mix(0.78, @bg_color, shade (1.1, @fg_color))			#Color of Scrollbar
+	bg[NORMAL]			= shade (0.65, @bg_color)					#For Handles
+
+	fg[NORMAL]			= shade (1.5, @bg_color)					#Stepper Color
+	fg[INSENSITIVE]			= shade (1.5, @bg_color)					#Stepper Color
+
+	engine "murrine" 
+	{
+		trough_shades		= { 0.9746, 0.9746 }
+		gradient_shades		= {1.1,1.05,1.0,0.96}
+		contrast		= 0.0
+		roundness		= 1
+		scrollbarstyle		= 0								#Enable or disable circles, stripes, handles
+		border_colors		= { shade (0.93, @bg_color), shade (0.75, @bg_color) }
+  	}
+}
+
+style "firefox-scrollbar" = "scrollbar"
+{
+	bg[SELECTED]			= mix(0.5, @bg_color, shade (1.1, @fg_color))
+	bg[NORMAL]			= shade (0.28, @bg_color)
+
+	engine "murrine" 
+	{
+		scrollbarstyle		= 2
+		border_colors		= { shade (0.65, @bg_color), shade (0.63, @bg_color) }
+  	}
+}

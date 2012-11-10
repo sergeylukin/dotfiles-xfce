@@ -1,0 +1,25 @@
+style "toolbarbutton-prelight"
+{
+	xthickness					= 0
+	ythickness					= 0
+
+	GtkButton::inner-border				= { 3, 3, 1, 1 }
+
+#	bg[PRELIGHT]					= shade (0.1, @bg_color)				#Prelight bg of buttons
+	bg[ACTIVE]					= @bg_color				#Color when clicked
+
+#	bg[INSENSITIVE]					= @bg_color						#Inactive button text/borders, toggle buttons, optionmenu
+
+	text[INSENSITIVE]				= shade (0.94, @bg_color)
+
+	engine "murrine"
+	{
+		contrast				= 0.0
+		roundness				= 3
+		gradient_shades				= {0.99,1.0,1.5,2.0}					#{1.4,1.15,1.1,0.98}#{0.98,1.0,1.05,1.1}
+		comboboxstyle				= 0
+#		glow_shade				= 0.1
+#		glowstyle				= 4					# 0 = top, 1 = bottom, 2 = top and bottom
+												# 3 = horizontal, 4 = centered glow
+        }
+}

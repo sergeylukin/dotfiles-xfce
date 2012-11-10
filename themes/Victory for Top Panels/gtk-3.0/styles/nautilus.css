@@ -1,0 +1,78 @@
+/* desktop mode */
+.nautilus-desktop.nautilus-canvas-item {
+    color: #FFFFFF;
+    text-shadow: 1 1 alpha (#000000, 0.5);
+}
+
+.nautilus-desktop.nautilus-canvas-item:selected,
+.nautilus-desktop.nautilus-canvas-item:active {
+    background-image: none;
+    background-color: alpha (@selected_bg_color, 0.84);
+    border-radius: 4;
+
+    color: @selected_fg_color;
+}
+
+.nautilus-desktop.nautilus-canvas-item:active,
+.nautilus-desktop.nautilus-canvas-item:prelight,
+.nautilus-desktop.nautilus-canvas-item:selected {
+    text-shadow: none;
+}
+
+NautilusIconView > NautilusIconContainer
+{
+    background-color: @bg_color;
+}
+
+NautilusIconView .nautilus-canvas-item:active,
+NautilusIconView .nautilus-canvas-item:selected
+{
+    background-color: @selected_bg_color;
+color: @selected_fg_color;
+border-radius: 5;
+}
+
+NautilusTrashBar.info,
+NautilusXContentBar.info,
+NautilusSearchBar.info,
+NautilusQueryEditor.info
+{
+background-image: -gtk-gradient (linear,
+				     left top, left bottom,
+				     from (shade (@selected_bg_color, 1.3)),
+                                     color-stop (0.20, shade (@selected_bg_color, 1.2)),
+                                     color-stop (0.50, shade (@selected_bg_color, 1.15)),
+				     to (shade (@selected_bg_color, 1.05)));
+    border-width: 0 0;
+    border-style: solid;
+
+}
+
+.nautilus-cluebar-label {
+    font: bold;
+    color: @selected_fg_color;
+}
+
+NautilusFloatingBar {
+    background-image: -gtk-gradient (linear,
+                                     left top, left bottom,
+                                     from (shade (@bg_color, 1.05)),
+                                     to (shade (@bg_color, 0.95)));
+
+    border-color: shade (@bg_color, 0.85);
+color: mix (@fg_color, @bg_color, 0.35);
+    border-radius: 3 3 0 0;
+    border-width: 1;
+    border-style: solid;
+}
+
+NautilusFloatingBar .button {
+    background-color: alpha (@bg_color, 0.0);
+    background-image: none;
+
+    border-style: none;
+    border-image: none;
+
+    -GtkButton-image-spacing: 0;
+    -GtkButton-inner-border: 0;
+}

@@ -1,0 +1,2 @@
+widget		"*Gtk*PathBar*GtkButton"						style		"pathbar-arrows"
+widget		"*ThunarLocationButton*GtkButton"					style		"pathbar-arrows"

@@ -1,0 +1,183 @@
+style "scrollbar"
+{
+	GtkScrollbar	:: has-backward-stepper		= 0
+	GtkScrollbar	:: has-forward-stepper		= 0					#Hack for OpenOffice (& LibreOffice?) Bug
+												#OpenOffice won't theme its scrollbars unless arrow button steppers are used.
+												#By setting this to 1, and stepper size to 1,
+												#it makes them look nearly invisible, while making OpenOffice work.
+	GtkScrollbar	:: has-secondary-backward-stepper	= 0
+	GtkScrollbar	:: has-secondary-forward-stepper	= 0
+	GtkRange	:: trough-under-steppers		= 0
+	GtkRange	:: stepper-size				= 10				#ArrowButtonSize: Up (Up) Down (Down) Left Right (Left Right) (B A Select Start)
+	GtkRange	:: arrow-scaling 			= 0.45
+
+	GtkRange	:: trough-border		= 4
+
+	GtkScrollbar	:: fixed-slider-length		= 0				#1
+	GtkRange	:: slider-width			= 7
+	GtkScrollbar	:: min-slider-length		= 200				#85
+
+
+	bg[SELECTED]					= mix(0.05, @bg_color, shade (1.1, @fg_color))			#Color of Scrollbar
+	bg[NORMAL]					= shade (0.9, @bg_color)					#For Handles & Stepper Background
+
+	fg[NORMAL]					= shade (1.5, @bg_color)					#Stepper Color
+	fg[INSENSITIVE]					= shade (1.5, @bg_color)					#Stepper Color
+
+	engine "murrine"
+	{
+		trough_shades				= { 0.973, 0.973 }
+		gradient_shades				= {1.0,1.0,1.0,1.0}#{1.1,1.05,1.0,0.96}
+		contrast				= 0.0
+		roundness				= 50
+		scrollbarstyle				= 0								#Enable or disable circles, stripes, handles
+		stepperstyle				= 1								# 0 = standard, 1 = integrated handles, 2 = unknown
+				focus_color				= "yellow"
+		border_colors				= {mix (0.5, @bg_color, shade (1.1, @fg_color)), mix (0.5, @bg_color, shade (1.1, @fg_color))}
+		glow_shade				= 3.0
+		glowstyle				= 5	
+prelight_shade =0.7
+  	}
+}
+
+
+style "scrolledwindow-scrollbar"
+{
+	GtkScrollbar	:: has-backward-stepper		= 0
+	GtkScrollbar	:: has-forward-stepper		= 0					#Hack for OpenOffice (& LibreOffice?) Bug
+												#OpenOffice won't theme its scrollbars unless arrow button steppers are used.
+												#By setting this to 1, and stepper size to 1,
+												#it makes them look nearly invisible, while making OpenOffice work.
+	GtkScrollbar	:: has-secondary-backward-stepper	= 0
+	GtkScrollbar	:: has-secondary-forward-stepper	= 0
+	GtkRange	:: trough-under-steppers		= 0
+	GtkRange	:: stepper-size				= 10				#ArrowButtonSize: Up (Up) Down (Down) Left Right (Left Right) (B A Select Start)
+	GtkRange	:: arrow-scaling 			= 0.45
+
+	GtkRange	:: trough-border		= 4
+
+	GtkScrollbar	:: fixed-slider-length		= 0				#1
+	GtkRange	:: slider-width			= 7
+	GtkScrollbar	:: min-slider-length		= 200				#85
+
+
+	bg[SELECTED]					= mix(0.05, @base_color, shade (1.1, @text_color))			#Color of Scrollbar
+	bg[NORMAL]					= shade (0.9, @bg_color)					#For Handles & Stepper Background
+
+	fg[NORMAL]					= shade (1.5, @bg_color)					#Stepper Color
+	fg[INSENSITIVE]					= shade (1.5, @bg_color)					#Stepper Color
+
+	engine "murrine"
+	{
+		trough_shades				= { 1.5, 1.5 }
+		gradient_shades				= {1.0,1.0,1.0,1.0}#{1.1,1.05,1.0,0.96}
+		contrast				= 0.0
+		roundness				= 50
+		scrollbarstyle				= 0								#Enable or disable circles, stripes, handles
+		stepperstyle				= 1								# 0 = standard, 1 = integrated handles, 2 = unknown
+				focus_color				= "yellow"
+		border_colors				= {mix (0.5, @base_color, shade (1.1, @text_color)), mix (0.5, @base_color, shade (1.1, @text_color))}
+		glow_shade				= 3.0
+		glowstyle				= 5	
+prelight_shade =0.7
+  	}
+}
+
+
+style "small-scrollbar"
+{
+	GtkRange	:: slider_width			= 6
+
+	GtkScrollbar	:: fixed-slider-length		= 1
+	GtkScrollbar	:: min-slider-length		= 36
+
+	GtkRange	:: trough-border		= 0
+
+
+	bg[SELECTED]					= mix(0.35, @bg_color, shade (1.1, @fg_color))			#Color of Scrollbar
+	bg[NORMAL]					= shade (0.57, @bg_color)					#For Handles
+
+	fg[NORMAL]					= shade (1.5, @bg_color)					#Stepper Color
+	fg[INSENSITIVE]					= shade (1.5, @bg_color)					#Stepper Color
+
+	engine "murrine" 
+	{
+		trough_shades				= { 0.81, 0.98 }
+		gradient_shades				= {1.0,1.0,1.0,1.0}
+		contrast				= 0.0
+		roundness				= 100
+		scrollbarstyle				= 0								#Enable or disable circles, stripes, handles
+		stepperstyle				= 1								# 0 = standard, 1 = integrated handles, 2 = unknown
+		border_colors				= {mix (0.5, @bg_color, shade (1.1, @fg_color)), mix (0.5, @bg_color, shade (1.1, @fg_color))}
+		glow_shade				= 1.25
+		glowstyle				= 5	
+prelight_shade =0.6
+  	}
+}
+
+
+
+
+
+
+#Gnome Appearance Preferences
+widget "GtkDialog.GtkVBox.GtkNotebook.GtkVBox.GtkVBox.GtkScrolledWindow.GtkVScrollbar"			style "scrolledwindow-scrollbar"
+widget "GtkDialog.GtkVBox.GtkNotebook.GtkVBox.GtkVBox.GtkScrolledWindow.GtkHScrollbar"			style "scrolledwindow-scrollbar"
+widget "GtkDialog.GtkVBox.GtkNotebook.GtkVBox.GtkVBox.GtkHBox.GtkScrolledWindow.GtkVScrollbar"		style "scrolledwindow-scrollbar"	#Backgrounds
+widget "GtkDialog.GtkVBox.GtkNotebook.GtkVBox.GtkScrolledWindow.GtkVScrollbar"				style "scrolledwindow-scrollbar"	#Window Border
+
+#Gedit
+widget "*Gedit*GtkScrolledWindow*crollbar*"								style "scrolledwindow-scrollbar"
+
+#Alacarte
+widget "GtkDialog.GtkVBox.GtkAlignment.GtkHBox.GtkHPaned.GtkVBox.GtkScrolledWindow.GtkVScrollbar"		style "scrolledwindow-scrollbar"
+widget "GtkDialog.GtkVBox.GtkAlignment.GtkHBox.GtkHPaned.GtkVBox.GtkHBox.GtkScrolledWindow.GtkVScrollbar"	style "scrolledwindow-scrollbar"
+
+#Exaile
+#widget "*xlgui+playlist+Playlist.GtkScrolledWindow.GtkVScrollbar"				style "scrolledwindow-scrollbar"
+
+#Gnome Terminal
+widget "TerminalWindow.GtkVBox.GtkNotebook.TerminalScreenContainer.GtkHBox.GtkVScrollbar"       style "scrolledwindow-scrollbar"
+
+#Firefox
+#widget "MozillaGtkWidget*Scrollbar"								style "scrollbar"
+
+#Gimp
+widget "*GimpDockbook.GimpDockable*Scrolled*crollbar"						style "scrolledwindow-scrollbar"
+
+#Pidgin
+widget "GtkWindow.GtkVBox.GtkNotebook.GtkVBox.GtkScrolledWindow.GtkVScrollbar"						style "scrolledwindow-scrollbar"
+widget "GtkWindow.GtkVBox.GtkNotebook.GtkVBox.GtkScrolledWindow.GtkHScrollbar"						style "scrolledwindow-scrollbar"
+widget "GtkWindow.GtkVBox.GtkNotebook.GtkVBox.GtkVBox.GtkFrame.GtkVBox.GtkScrolledWindow.GtkVScrollbar"			style "scrolledwindow-scrollbar"
+
+#Empathy
+widget "EmpathyMainWindow.GtkVBox.GtkNotebook.GtkScrolledWindow.GtkVScrollbar"						style "scrolledwindow-scrollbar"
+widget "*EmpathyChat.GtkVBox.GtkHPaned.GtkVBox.GtkScrolledWindow.GtkVScrollbar"						style "scrolledwindow-scrollbar"
+
+#File Chooser
+widget		"*FileChooser*.*.*.*VBox.GtkS*Scrollbar"					style	"small-scrollbar"
+widget		"*FileChooserDefault.*.*.*.*.*.*Scrollbar"					style	"scrollbar"
+
+#Update Manager - Very Generric!
+widget "GtkWindow.GtkVBox.GtkVBox.GtkVBox.GtkScrolledWindow.GtkVScrollbar"						style "scrolledwindow-scrollbar"
+widget "GtkWindow.GtkVBox.GtkVBox.GtkExpander.GtkVBox.GtkNotebook.GtkVBox.GtkScrolledWindow.GtkVScrollbar"			style "scrolledwindow-scrollbar"
+widget "GtkWindow.GtkVBox.GtkVBox.GtkExpander.GtkVBox.GtkNotebook.GtkVBox.GtkScrolledWindow.GtkHScrollbar"			style "scrolledwindow-scrollbar"
+
+widget "aptdaemon+gtkwidgets+AptProgressDialog.GtkVBox.GtkHBox.GtkVBox.GtkExpander.GtkHBox.GtkScrolledWindow.*Scrollbar"	style "scrolledwindow-scrollbar"
+
+#XFCE4.6
+widget "GtkPlug*plug-child*scrolledwindow*Scrollbar"								style		"scrolledwindow-scrollbar"
+
+#XFCE4.8
+widget "GtkPlug.GtkNotebook.GtkScrolledWindow*Scrollbar"							style		"scrolledwindow-scrollbar"
+widget "GtkPlug.GtkNotebook.XfaeWindow.GtkScrolledWindow*Scrollbar"						style		"scrolledwindow-scrollbar"
+widget "GtkPlug.GtkAlignment.GtkNotebook.GtkNotebook.GtkAlignment.GtkVBox.GtkHBox.GtkFrame.GtkAlignment.GtkVBox.GtkScrolledWindow*Scrollbar"	style "scrolledwindow-scrollbar"
+
+widget "*Xfce*Mixer*Control*ScrolledWindow.GtkVScrollbar"							style:highest "scrolledwindow-scrollbar"
+
+#Gnome Panel Add Applet Dialog
+widget "GtkDialog.GtkVBox.GtkVBox.GtkVBox.GtkScrolledWindow*Scrollbar"						style		"scrolledwindow-scrollbar"
+
+#Compiz Config Settings Manager (ccsm)
+widget		"*ccm+Widgets+PluginWindow*Scrollbar"								style		"scrolledwindow-scrollbar"
+widget		"*ccm+Widgets+PluginWindow*"									style		"nocontrast"

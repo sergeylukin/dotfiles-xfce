@@ -1,0 +1,520 @@
+################################################################################
+# SCROLLBAR
+################################################################################
+
+style "scrollbar"
+{
+
+	GtkScrollbar		:: has-backward-stepper			= 0
+	GtkScrollbar		:: has-forward-stepper			= 0
+	GtkScrollbar		:: has-secondary-backward-stepper	= 0
+	GtkScrollbar		:: has-secondary-forward-stepper	= 0
+	GtkRange		:: stepper_size				= 15
+
+	GtkRange		:: trough_border			= 0
+	GtkRange		:: slider_width				= 15
+
+	GtkScrollbar		:: fixed-slider-length			= 1
+	GtkScrollbar		:: min-slider-length			= 64
+
+
+	engine "pixmap" 
+	{
+
+	# Horizontal slider background
+
+		image
+		{
+		function	= BOX
+		recolorable	= TRUE
+		detail		= "trough"
+		file		= "Images/oldscrollbar/trough-scrollbar-horiz.png"
+		#border		= { 15, 15, 0, 0 }
+		stretch		= TRUE
+		orientation	= HORIZONTAL
+		}
+	    
+	# Vertical slider background
+
+		image
+		{
+		function	= BOX
+		recolorable	= TRUE
+		detail		= "trough"
+		file		= "Images/oldscrollbar/trough-scrollbar-vert.png"
+		#border		= { 0, 0, 15, 15 }
+		stretch		= TRUE
+		orientation	= VERTICAL
+		}
+
+	# Normal horizontal slider
+
+		image
+		{
+		function	= SLIDER
+		recolorable	= TRUE
+		state		= NORMAL
+		file		= "Images/oldscrollbar/slider-horiz.png"
+		#border		= { 15, 15, 6, 6 }
+		stretch		= TRUE
+		orientation	= HORIZONTAL
+		#overlay_file	= "Images/oldscrollbar/thumb-h-scrollbar.png"
+		#overlay_stretch= FALSE
+	    	}
+		
+	# Horizontal slider (active)
+
+		image
+		{
+	        function	= SLIDER
+	        recolorable	= TRUE
+	        state		= ACTIVE
+	        file		= "Images/oldscrollbar/slider-horiz.png"
+	        #border		= { 15, 15, 6, 6 }
+	        stretch		= TRUE
+	        orientation	= HORIZONTAL
+            	#overlay_file	= "Images/oldscrollbar/thumb-h-scrollbar.png"
+            	#overlay_stretch= FALSE
+		}
+
+	# Horizontal slider (mouse over)
+
+		image
+		{
+		function	= SLIDER 
+		recolorable	= TRUE
+		state		= PRELIGHT
+		file		= "Images/oldscrollbar/slider-horiz.png"
+		#border		= { 17, 17, 6, 6 }
+		stretch		= TRUE
+		orientation	= HORIZONTAL
+		#overlay_file	= "Images/oldscrollbar/thumb-h-scrollbar.png"
+		#overlay_stretch= FALSE
+	    	}
+	    
+	# Horizontal slider (Insesitive)
+
+		image
+		{
+	        function	= SLIDER 
+	        recolorable	= TRUE
+	        state		= INSENSITIVE
+	        file		= "Images/oldscrollbar/slider-horiz.png"
+	        #border		= { 0, 0, 0, 0 }
+	        stretch		= TRUE
+	        orientation	= HORIZONTAL
+            	#overlay_file	= "Images/oldscrollbar/thumb-h-scrollbar.png"
+            	#overlay_stretch= FALSE
+	    	}
+
+	# Normal vertical slider
+
+		image
+		{
+		function	= SLIDER
+		recolorable	= TRUE
+		state		= NORMAL
+		file		= "Images/oldscrollbar/slider-vert.png"
+		#border		= { 0, 0, 0, 0 }
+		stretch		= TRUE
+		orientation	= VERTICAL
+		#overlay_file	= "Images/oldscrollbar/thumb-v-scrollbar.png"
+		#overlay_stretch= FALSE
+		}
+		
+	# Vertical slider (Active)
+
+		image
+		{
+		function	= SLIDER
+		recolorable	= TRUE
+		state		= ACTIVE
+		file		= "Images/oldscrollbar/slider-vert.png"
+		#border		= { 0, 0, 0, 0 }
+		stretch		= TRUE
+		orientation	= VERTICAL
+		#overlay_file	= "Images/oldscrollbar/thumb-v-scrollbar.png"
+		#overlay_stretch= FALSE
+		}
+
+	# Vertical slider (mouse over)
+
+		image
+		{
+		function	= SLIDER 
+		recolorable	= TRUE
+		state		= PRELIGHT
+		file		= "Images/oldscrollbar/slider-vert.png"
+		#border		= { 0, 0, 0, 0 }
+		stretch		= TRUE
+		orientation	= VERTICAL
+		#overlay_file	= "Images/oldscrollbar/thumb-v-scrollbar.png"
+		#overlay_stretch= FALSE
+	    	}
+	    
+	    # Vertical slider (Insesitive)
+
+		image
+		{
+		function	= SLIDER 
+		recolorable	= TRUE
+		state		= INSENSITIVE
+		file		= "Images/oldscrollbar/slider-vert.png"
+		#border		= { 0, 0, 0, 0 }
+		stretch		= TRUE
+		orientation	= VERTICAL
+		#overlay_file	= "Images/oldscrollbar/thumb-v-scrollbar.png"
+		#overlay_stretch= FALSE
+		}
+
+################################################################################
+# SCROLLBAR STEPPERS
+################################################################################
+
+	# Up
+		image
+		{
+		function	= STEPPER
+		recolorable	= TRUE
+		state		= NORMAL
+		file		= "Images/oldscrollbar/stepper-up.png"
+		#border		= { 2, 2, 2, 2 }
+		stretch		= TRUE
+		arrow_direction	= UP
+		}
+
+		image
+		{
+		function	= STEPPER
+		recolorable	= TRUE
+		state		= PRELIGHT
+		file		= "Images/oldscrollbar/stepper-up.png"
+		#border		= { 12, 2, 2, 9 }
+		stretch		= TRUE
+		arrow_direction	= UP
+		}
+
+		image
+		{
+		function	= STEPPER
+		recolorable	= TRUE
+		state		= ACTIVE
+		file		= "Images/oldscrollbar/stepper-up.png"
+		#border		= { 12, 2, 2, 9 }
+		stretch		= TRUE
+		arrow_direction	= UP
+		}
+
+		image
+		{
+		function	= STEPPER
+		recolorable	= TRUE
+		state		= INSENSITIVE
+		file		= "Images/oldscrollbar/stepper-up.png"
+		#border		= { 12, 2, 2, 9 }
+		stretch		= TRUE
+		arrow_direction	= UP
+		}
+
+	# DOWN
+
+		image
+		{
+		function	= STEPPER
+		recolorable	= TRUE
+		state		= NORMAL
+		file		= "Images/oldscrollbar/stepper-down.png"
+		#border		= { 12, 2, 10, 2 }
+		stretch		= TRUE
+		arrow_direction	= DOWN
+		}
+
+		image
+		{
+		function	= STEPPER
+		recolorable	= TRUE
+		state		= PRELIGHT
+		file		= "Images/oldscrollbar/stepper-down.png"
+		#border		= { 12, 2, 10, 2 }
+		stretch		= TRUE
+		arrow_direction	= DOWN
+		}
+
+		image
+		{
+		function	= STEPPER
+		recolorable	= TRUE
+		state		= ACTIVE
+		file		= "Images/oldscrollbar/stepper-down.png"
+		#border		= { 12, 2, 10, 2 }
+		stretch		= TRUE
+		arrow_direction	= DOWN
+		}
+
+		image
+		{
+		function	= STEPPER
+		recolorable	= TRUE
+		state		= INSENSITIVE
+		file		= "Images/oldscrollbar/stepper-down.png"
+		#border		= { 12, 2, 10, 2 }
+		stretch		= TRUE
+		arrow_direction	= DOWN
+		}
+
+	# RIGHT
+
+		image
+		{
+		function	= STEPPER
+		recolorable	= TRUE
+		state		= NORMAL
+		file		= "Images/oldscrollbar/stepper-right.png"
+		#border		= { 2, 9, 2, 13 }
+		stretch		= TRUE
+		arrow_direction	= RIGHT
+		}
+
+		image
+		{
+		function	= STEPPER
+		recolorable	= TRUE
+		state		= PRELIGHT
+		file		= "Images/oldscrollbar/stepper-right.png"
+		#border		= { 2, 9, 2, 13 }
+		stretch		= TRUE
+		arrow_direction	= RIGHT
+		}
+
+		image
+		{
+		function	= STEPPER
+		recolorable	= TRUE
+		state		= ACTIVE
+		file		= "Images/oldscrollbar/stepper-right.png"
+		#border		= { 2, 9, 2, 13 }
+		stretch		= TRUE
+		arrow_direction	= RIGHT
+		}
+
+		image
+		{
+		function	= STEPPER
+		recolorable	= TRUE
+		state		= INSENSITIVE
+		file		= "Images/oldscrollbar/stepper-right.png"
+		#border		= { 2, 9, 2, 13 }
+		stretch		= TRUE
+		arrow_direction	= RIGHT
+		}
+
+	# LEFT
+
+		image 
+		{
+		function	= STEPPER
+		recolorable	= TRUE
+		state		= NORMAL
+		file		= "Images/oldscrollbar/stepper-left.png"
+		#border		= { 2, 9, 2, 13 }
+		stretch		= TRUE
+		arrow_direction	= LEFT
+		}
+
+		image
+		{
+		function	= STEPPER
+		recolorable	= TRUE
+		state		= PRELIGHT
+		file		= "Images/oldscrollbar/stepper-left.png"
+		#border		= { 2, 9, 2, 13 }
+		stretch		= TRUE
+		arrow_direction	= LEFT
+		}
+
+		image
+		{
+		function	= STEPPER
+		recolorable	= TRUE
+		state		= ACTIVE
+		file		= "Images/oldscrollbar/stepper-left.png"
+		#border		= { 2, 9, 2, 13 }
+		stretch		= TRUE
+		arrow_direction	= LEFT
+		}
+
+		image
+		{
+		function	= STEPPER
+		recolorable	= TRUE
+		state		= INSENSITIVE
+		file		= "Images/oldscrollbar/stepper-left.png"
+		#border		= { 2, 9, 2, 13 }
+		stretch		= TRUE
+		arrow_direction	= LEFT
+		}
+	}
+}
+
+class "GtkScrollbar"		style "scrollbar"
+class "GtkHScrollbar"       	style "scrollbar"
+class "GtkVScrollbar"       	style "scrollbar"
+
+style "firefox-scrollbar"
+{
+	
+	GtkRange		:: trough_border	= 0
+	GtkRange		:: slider_width		= 15
+	GtkRange		:: stepper_size		= 15
+
+	GtkScrollbar		:: min-slider-length	= 64
+
+
+	engine "pixmap" 
+	{
+
+	# Normal horizontal slider
+
+		image
+		{
+		function	= SLIDER
+		recolorable	= TRUE
+		state		= NORMAL
+		file		= "Images/oldscrollbar/firefox-slider-horiz.png"
+		#border		= { 15, 15, 6, 6 }
+		stretch		= TRUE
+		orientation	= HORIZONTAL
+		overlay_file	= "Images/oldscrollbar/slider-horiz.png"
+		overlay_stretch	= FALSE
+		}
+		
+	# Horizontal slider (active)
+
+		image
+		{
+		function	= SLIDER
+		recolorable	= TRUE
+		state		= ACTIVE
+		file		= "Images/oldscrollbar/firefox-slider-horiz.png"
+		#border		= { 15, 15, 6, 6 }
+		stretch		= TRUE
+		orientation	= HORIZONTAL
+		overlay_file	= "Images/oldscrollbar/slider-horiz.png"
+		overlay_stretch	= FALSE
+		}
+
+	# Horizontal slider (mouse over)
+
+		image
+		{
+		function	= SLIDER 
+		recolorable	= TRUE
+		state		= PRELIGHT
+		file		= "Images/oldscrollbar/firefox-slider-horiz.png"
+		#border		= { 17, 17, 6, 6 }
+		stretch		= TRUE
+		orientation	= HORIZONTAL
+		overlay_file	= "Images/oldscrollbar/slider-horiz.png"
+		overlay_stretch	= FALSE
+		}
+	    
+	# Horizontal slider (Insesitive)
+
+		image
+		{
+		function	= SLIDER 
+		recolorable	= TRUE
+		state		= INSENSITIVE
+		file		= "Images/oldscrollbar/firefox-slider-horiz.png"
+		#border		= { 0, 0, 0, 0 }
+		stretch		= TRUE
+		orientation	= HORIZONTAL
+		overlay_file	= "Images/oldscrollbar/slider-horiz.png"
+		overlay_stretch	= FALSE
+		}
+
+	# Normal vertical slider
+
+		image
+		{
+		function	= SLIDER
+		recolorable	= TRUE
+		state		= NORMAL
+		file		= "Images/oldscrollbar/firefox-slider-vert.png"
+		#border		= { 50, 50, 0, 50 }
+		stretch		= TRUE
+		orientation	= VERTICAL
+		overlay_file	= "Images/oldscrollbar/slider-vert.png"
+		overlay_stretch	= FALSE
+		}
+		
+	# Vertical slider (Active)
+
+		image
+		{
+		function	= SLIDER
+		recolorable	= TRUE
+		state		= ACTIVE
+		file		= "Images/oldscrollbar/firefox-slider-vert.png"
+		#border		= { 0, 0, 0, 0 }
+		stretch		= TRUE
+		orientation	= VERTICAL
+		overlay_file	= "Images/oldscrollbar/slider-vert.png"
+		overlay_stretch	= FALSE
+		}
+
+	# Vertical slider (mouse over)
+
+		image
+		{
+		function	= SLIDER 
+		recolorable	= TRUE
+		state		= PRELIGHT
+		file		= "Images/oldscrollbar/firefox-slider-vert.png"
+		#border		= { 0, 0, 0, 0 }
+		stretch		= TRUE
+		orientation	= VERTICAL
+		overlay_file	= "Images/oldscrollbar/slider-vert.png"
+		overlay_stretch	= FALSE
+		}
+	    
+	# Vertical slider (Insesitive)
+
+		image
+		{
+		function	= SLIDER 
+		recolorable	= TRUE
+		state		= INSENSITIVE
+		file		= "Images/oldscrollbar/firefox-slider-vert.png"
+		#border		= { 0, 0, 0, 0 }
+		stretch		= TRUE
+		orientation	= VERTICAL
+		overlay_file	= "Images/oldscrollbar/slider-vert.png"
+		overlay_stretch	= FALSE
+		}
+	}
+}
+
+style "small-scrollbar"
+{
+
+	GtkRange	:: slider_width				= 7
+
+	GtkScrollbar	:: fixed-slider-length			= 1
+	GtkScrollbar	:: min-slider-length			= 32
+
+
+	bg[SELECTED]			= shade (1.04, @bg_color)
+	bg[NORMAL]			= shade (1.04, @bg_color)
+
+	engine "murrine" 
+	{
+		trough_shades = { 0.81, 0.98 }
+		gradient_shades		= {0.97,0.93,1.02,1.11}
+		contrast = 0.0
+		roundness = 0
+		scrollbarstyle = 0 # Enable or disable circles, stripes, handles
+
+
+  	}
+}

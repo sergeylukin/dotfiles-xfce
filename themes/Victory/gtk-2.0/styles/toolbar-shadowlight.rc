@@ -1,0 +1,47 @@
+style "toolbar"
+{
+	xthickness					= 1
+	ythickness					= 1
+
+	GtkToolbar::internal-padding			= 3
+
+	GtkArrow::arrow-spacing				= 0
+	GtkArrow::arrow-scaling				= 0.6
+
+	bg[NORMAL]					= @bg_color
+	bg[PRELIGHT]					= @bg_color
+
+	fg[NORMAL]					= mix (0.87, @fg_color, shade (1.0, @bg_color))		#Text color of active toolbar buttons
+	fg[PRELIGHT]					= mix (0.92, @fg_color, shade (1.0, @bg_color))
+	fg[INSENSITIVE]					= shade (0.9, @bg_color)
+
+	engine "murrine"
+	{
+		glow_shade				= 1.0
+		glowstyle				= 0					# 0top, 1bottom, 2top&bottom, 3horizontal, 4centered glow
+		gradient_shades				= {0.89,0.97,1.0,1.0}
+		toolbarstyle				= 1							# 0 = flat, 1 = glassy, 2 = gradient
+		contrast				= 0.165
+        }
+}
+
+style "toolbarbutton-flat" = "default"
+{
+	GtkButton::inner-border				= { 3, 3, 0, 0 }
+
+	bg[NORMAL]					= @bg_color
+	bg[PRELIGHT]					= shade (0.98, @bg_color)				#Prelight bg of buttons, radiochecks, 'more detail' triangles.
+														#Change for Accessibility
+	bg[SELECTED]					= @bg_color
+	bg[INSENSITIVE]					= @bg_color						#Inactive button text/borders, toggle buttons, optionmenu
+	bg[ACTIVE]					= shade (0.975, @bg_color)
+
+	text[INSENSITIVE]				= shade (0.94, @bg_color)
+
+	engine "murrine"
+	{
+		contrast				= 1.0
+		gradient_shades				= {1.0,1.0,1.0,1.0}
+		roundness				= 3
+	}
+}

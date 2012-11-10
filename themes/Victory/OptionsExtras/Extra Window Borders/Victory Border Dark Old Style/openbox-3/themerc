@@ -1,0 +1,126 @@
+# Victory (Strikes Again) Dark Openbox border by Darin
+# Using elements from the following (Big thanks to the authors)
+# Buttons:	Concrete by daman 
+# Base Code:	Nova-Blue by lyrae | thrynk.deviantart.com
+
+# Window geometry
+padding.width: 4
+border.width: 1
+window.client.padding.width: 1
+window.client.padding.height: 1
+window.handle.width: 0
+
+#Menu geometry
+menu.border.width: 3
+menu.overlap.x: -3
+
+# Border colors
+window.active.border.color: #3C3B37
+window.inactive.border.color: #3C3B37
+menu.border.color: #575757
+window.active.client.color: #3C3B37
+window.inactive.client.color: #3C3B37
+
+# Text shadows
+window.active.label.text.font: shadow=n
+window.inactive.label.text.font: shadow=n
+menu.items.font: shadow=n
+menu.title.text.font: shadow=n
+
+# Window title justification
+window.label.text.justify: center
+
+# Active window
+window.active.title.bg: Flat Gradient Vertical
+window.active.title.bg.color: #4A4946
+window.active.title.bg.colorTo: #3C3B37
+window.active.label.bg: Parentrelative
+window.active.label.text.color: #F0F0F0
+
+window.active.handle.bg: Flat Gradient Vertical
+window.active.handle.bg.color: #f4f4f4
+window.active.handle.bg.colorTo: #f4f4f4
+
+window.active.grip.bg: Flat Gradient Vertical
+window.active.grip.bg.color: #f4f4f4
+window.active.grip.bg.colorTo: #f4f4f4
+
+window.active.button.unpressed.bg: parentrelative
+window.active.button.unpressed.image.color: #C7C7C7
+
+window.active.button.pressed.bg: parentrelative
+
+window.active.button.disabled.bg: parentrelative
+window.active.button.disabled.image.color: #525252
+
+window.active.button.toggled.bg: parentrelative
+window.active.button.toggled.image.color: #ffffff
+
+window.active.button.hover.bg: parentrelative
+window.active.button.hover.image.color: #ffffff
+
+# Inactive windows
+window.inactive.title.bg: Flat Gradient Vertical
+window.inactive.title.bg.color: #4A4946
+window.inactive.title.bg.colorTo: #3C3B37
+
+window.inactive.label.bg: Parentrelative
+window.inactive.label.text.color: #A6A6A6
+
+window.inactive.handle.bg: Parentrelative
+window.inactive.handle.bg.color: #f4f4f4
+window.inactive.handle.bg.colorTo: #f4f4f4
+
+window.inactive.grip.bg: Flat Gradient Vertical
+window.inactive.grip.bg.color: #f4f4f4
+window.inactive.grip.bg.colorTo: #f4f4f4
+
+window.inactive.button.unpressed.bg: Parentrelative
+window.inactive.button.unpressed.image.color: #4D4B47
+
+window.inactive.button.pressed.bg: Parentrelative
+
+window.inactive.button.disabled.bg: Parentrelative
+window.inactive.button.disabled.image.color: #454440
+
+window.inactive.button.toggled.bg: Flat Parentrelative
+window.inactive.button.toggled.image.color: #FFFFFF
+
+window.inactive.button.hover.bg: Parentrelative
+window.inactive.button.hover.image.color: #FFFFFF
+
+# Menus
+menu.title.bg: Flat Gradient Vertical
+menu.title.bg.color: #575757
+menu.title.bg.colorTo: #696969
+menu.title.text.color: #C7C7C7
+menu.title.text.justify: Left
+
+menu.items.bg: Flat Solid
+menu.items.bg.color: #575757
+menu.items.text.color: #C7C7C7
+menu.items.disabled.text.color: #424242
+
+menu.items.active.bg: Flat Gradient Vertical
+menu.items.active.bg.color: #696969
+menu.items.active.bg.colorTo: #5C5C5C
+menu.items.active.text.color: #C7C7C7
+menu.items.active.disabled.text.color: #424242
+
+menu.separator.color: #696969
+menu.separator.width: 0
+menu.separator.padding.width: 30
+menu.separator.padding.height: 2
+
+#osd
+osd.border.width: 0
+osd.border.color:  #474747
+
+osd.bg: flat border vertical gradient
+osd.bg.color: #4A4946
+osd.bg.colorTo: #3C3B37
+osd.bg.border.color: #474747
+
+osd.label.bg: parentrelative
+
+osd.label.text.color: #C7C7C7

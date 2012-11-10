@@ -1,0 +1,102 @@
+PanelToplevel,
+PanelWidget,
+PanelAppletFrame,
+PanelApplet {
+    background-color: #575757;
+    background-image:  none;
+    color: @menu_fg;
+padding: 1;
+}
+
+ClockBox,
+ClockBox:hover,
+.gnome-panel-menu-bar {
+    background-image:  none;
+}
+
+.gnome-panel-menu-bar .menuitem:prelight {
+    color: red;
+}
+
+.gnome-panel-menu-bar .menuitem *:prelight {
+    color: @menu_fg_prelight;
+    text-shadow: 0 0;
+}
+
+PanelApplet .button {
+    padding: 0;
+
+    border-image: none;
+    border-width: 0;
+    border-radius: 0;
+
+    background-image:  -gtk-gradient (linear, left top, left bottom,
+				     from (shade (#575757, 1.05)),
+                                     color-stop (0.25, shade (#5d5d5d, 1.05)),
+                                     color-stop (0.50, shade (#676767, 1.00)),
+                                     color-stop (0.75, shade (#797979, 0.95)),
+				     to (shade (#8d8d8d, 0.95)));
+    background-color: alpha(@base_color, 0.0);
+
+    color: @menu_fg_prelight;
+
+    -GtkButton-child-displacement-x: 0;
+    -GtkButton-child-displacement-y: 0;
+}
+
+PanelApplet .button:prelight
+{
+color: red;
+    background-image:  -gtk-gradient (linear, left top, left bottom,
+				     from (shade (#575757, 1.25)),
+                                     color-stop (0.25, shade (#5d5d5d, 1.25)),
+                                     color-stop (0.50, shade (#676767, 1.20)),
+                                     color-stop (0.75, shade (#797979, 1.20)),
+				     to (shade (#8d8d8d, 1.20)));
+    background-color: alpha(@base_color, 0.0);
+}
+
+PanelApplet .button:active {
+    border-image: none;
+    background-image:  -gtk-gradient (linear, left top, left bottom,
+				     from (shade (#575757, 1.20)),
+                                     color-stop (0.25, shade (#5d5d5d, 1.20)),
+                                     color-stop (0.50, shade (#676767, 1.15)),
+                                     color-stop (0.75, shade (#797979, 1.20)),
+				     to (shade (#8d8d8d, 1.25)));
+    border-width: 0;
+    border-radius: 0;
+}
+
+PanelApplet .button:active:prelight
+{
+    background-image:  -gtk-gradient (linear, left top, left bottom,
+				     from (shade (#575757, 1.4)),
+                                     color-stop (0.25, shade (#5d5d5d, 1.4)),
+                                     color-stop (0.50, shade (#676767, 1.4)),
+                                     color-stop (0.75, shade (#797979, 1.4)),
+				     to (shade (#8d8d8d, 1.4)));
+color: white;
+}
+
+NaTrayApplet {
+    -NaTrayApplet-icon-padding: 12;
+    -NaTrayApplet-icon-size: 16;
+}
+
+WnckPager, WnckTasklist {
+    background-color: #676767;
+    background-image: none;
+    color: @menu_fg;
+}
+
+GsmFailWhaleDialog {
+    background-color: @menu_fg_prelight;
+    background-image: none;
+    color: @menu_fg;
+}
+
+GsmFailWhaleDialog * {
+    background-color: @menu_fg_prelight;
+    background-image: none;
+}

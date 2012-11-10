@@ -1,0 +1,42 @@
+This theme was made to easily change both the sidebar color (blue by default) and the file menu bar (gray by default).
+
+By changing the file menu bar (File, Edit, View, etc) color, you can use any different window border you might like better than the one included, and still keep the blended look.
+
+----------------------------------
+
+To change:
+
+1. Open the file /home/yournamehere/.themes/Victory/gtk-2.0/gtkrc
+2. Open the file /home/yournamehere/.themes/Victory/gtk-3.0/gtk.css
+3. Open the file /home/yournamehere/.themes/Victory/gtk-3.0/settings.ini
+4. Change the colors for the lines below:
+
+Each of these files contain the color settings in the top of the files. The important parts are:
+
+selected_fg_color
+selected_bg_color
+
+tooltip_fg_color
+tooltip_bg_color
+
+Here's what each one of those changes:
+
+selected_fg_color = Sidebar Text Color
+selected_bg_color = Sidebar Background Color
+
+tooltip_fg_color = File Menu Text Color
+tooltip_bg_color = File Menu Background Color
+
+Just change the #xxxxxx to a color you like! Save, and log out and back in to see the changes!
+
+----------------------------------
+
+Here are a few of the sidebar background colors I've used before:
+
+#7E9FBF - Blue, close to the color used in the elementary themes.
+#AC5547 - Red Orange
+#84423B - Dark Red
+#C94A40 - Red/Strawberry
+#646464 or #919191 or #97999A- Silver
+#9B9BB7 - Purple
+#DB8AB7 - Pink

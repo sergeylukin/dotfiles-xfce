@@ -1,0 +1,37 @@
+#Mirori - Make Midori Match Window Border
+
+###################### Midori Web Browser ######################
+
+style "midori-toolbar" = "menubar"
+{
+	xthickness = 3
+	ythickness = 3
+
+	base[NORMAL]					= shade (0.9, @tooltip_bg_color)
+	base[ACTIVE]					= shade (0.9, @tooltip_bg_color)
+	base[PRELIGHT]					= shade (0.1, @tooltip_bg_color)
+	base[SELECTED]					= shade (0.1, @tooltip_bg_color)
+	base[INSENSITIVE]				= shade (0.1, @tooltip_bg_color)
+
+	bg[NORMAL]					= @tooltip_bg_color
+	bg[PRELIGHT]					= shade (0.96, @tooltip_bg_color)
+	bg[ACTIVE]					= shade (0.8, @tooltip_bg_color)
+	bg[INSENSITIVE]					= shade (1.0, @tooltip_bg_color)
+	bg[SELECTED]					= @tooltip_bg_color
+
+	fg[ACTIVE] = shade (0.8, @tooltip_fg_color)
+	fg[NORMAL] = shade (1.1, @tooltip_fg_color)
+
+	engine "murrine"
+	{
+		focus_color = shade (0.7, @tooltip_bg_color)
+	}
+
+}
+
+widget		"MidoriBrowser*toolbar_navigation*GtkAlignment*"			style:highest	"midori-toolbar"	#Location Entry Fields Dark
+widget		"MidoriBrowser*toolbar_navigation*"					style:rc		"menubar"		#Location Toolbar Dark
+widget		"MidoriBrowser*toolbar_navigation*utton*"				style:rc		"midori-toolbar"	#Location Toolbar Buttons Dark
+
+#widget		"MidoriBrowser*"							style		"midori-toolbar"	#Tab Bar Dark (but makes whole window dark)
+#widget		"MidoriBrowser*crollbar"						style:highest	"scrollbar"		#Scrollbar

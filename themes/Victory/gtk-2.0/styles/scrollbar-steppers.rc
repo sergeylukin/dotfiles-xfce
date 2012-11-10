@@ -1,0 +1,13 @@
+style "scrollbar"
+{	
+
+GtkScrollbar	:: has-backward-stepper		= 1
+	GtkScrollbar	:: has-forward-stepper		= 1					#Hack for OpenOffice (& LibreOffice?) Bug
+												#OpenOffice won't theme its scrollbars unless arrow button steppers are used.
+												#By setting this to 1, and stepper size to 1,
+												#it makes them look nearly invisible, while making OpenOffice work.
+	GtkScrollbar	:: has-secondary-backward-stepper	= 0
+	GtkScrollbar	:: has-secondary-forward-stepper	= 0
+	GtkRange	:: stepper-size				= 20				#ArrowButtonSize: Up (Up) Down (Down) Left Right (Left Right) (B A Select Start)
+	GtkRange	:: arrow-scaling 			= 0.45
+}

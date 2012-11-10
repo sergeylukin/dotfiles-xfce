@@ -1,0 +1,74 @@
+style "small-scrollbar"
+{
+
+	GtkRange	:: slider_width		= 7
+
+	GtkScrollbar	:: fixed-slider-length	= 1
+	GtkScrollbar	:: min-slider-length	= 32
+
+	GtkScale	::trough-border		= 0						# Change to 0 for thinner slider
+	GtkScale	::slider-width		= 7						# Volume Slider Trough Size
+	GtkScale	::slider-length		= 14						# Volume Slider Length
+	GtkScale	::trough-side-details	= 0
+
+	GtkWidget	::focus-line-width	= 0
+	GtkWidget	::focus-padding		= 2
+
+
+	bg[SELECTED]			= shade (1.04, @bg_color)
+	bg[NORMAL]			= shade (1.04, @bg_color)
+	bg[ACTIVE]			= shade (0.92, @bg_color)
+	bg[PRELIGHT]			= shade (1.04, @bg_color)
+
+	engine "murrine" 
+	{
+		trough_shades		= { 0.81, 0.98 }
+		gradient_shades		= {0.97,0.93,1.02,1.11}
+		contrast		= 0.0
+		roundness		= 0
+		scrollbarstyle		= 0							# Enable or disable circles, stripes, handles
+
+
+  	}
+}
+
+style "scrollbar"
+{
+
+	GtkScrollbar	:: has-backward-stepper			= 0
+	GtkScrollbar	:: has-forward-stepper			= 0
+	GtkScrollbar	:: has-secondary-backward-stepper	= 0
+	GtkScrollbar	:: has-secondary-forward-stepper	= 0
+	GtkRange	:: trough-under-steppers		= 0
+	GtkRange	:: stepper-size				= 23
+	GtkRange	:: arrow-scaling 			= 0.45
+	GtkScrollbar	:: arrow-scaling 			= 0.45
+	GtkWidget	:: arrow-scaling 			= 0.45
+
+	GtkRange	:: trough-border			= 0
+
+	GtkScrollbar	:: fixed-slider-length			= 1
+	GtkRange	:: slider-width				= 13
+	GtkScrollbar	:: min-slider-length			= 64
+
+
+	bg[SELECTED]			= shade (0.8, @bg_color)
+					#mix(0.265, @fg_color, shade (1.0, @bg_color))
+#	bg[NORMAL]			= shade (0.8, @bg_color)
+	fg[INSENSITIVE]			= @fg_color							#Stepper Arrow Color
+					#shade (0.85, @bg_color)
+	bg[NORMAL]			= shade (0.71, @bg_color)					#For Handles
+
+	engine "murrine" 
+	{
+		trough_shades		= { 0.9746, 0.9746 }
+		gradient_shades		= {1.05,0.97,0.97,1.05}
+		contrast		= 0.0
+		roundness		= 0
+		scrollbarstyle		= 0								# Enable or disable circles, stripes, handles
+		border_colors		= { shade (0.805, @bg_color), shade (0.805, @bg_color) }
+  	}
+}
+
+
+

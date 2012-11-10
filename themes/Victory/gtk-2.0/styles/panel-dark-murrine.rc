@@ -1,0 +1,111 @@
+######################## Dark Panel (Murrine Engine) ########################
+
+style "panel"
+{
+	WnckTasklist	:: fade-opacity			= 0.2
+	font_name					= "10"
+	ythickness					= 0
+	xthickness					= 0
+	GtkArrow	:: arrow-scaling		= 0.0
+	GtkButton	:: child-displacement-x		= 0
+	GtkButton	:: child-displacement-y		= 0
+
+	bg[NORMAL]					= shade (1.0, "#383838")
+	fg[NORMAL]					= shade (1.0, "#9E9E9E")
+
+
+	bg[ACTIVE]					= shade (1.0, "#474747")			#0.865
+	fg[ACTIVE]					= shade (1.0, "#F0F0F0")
+
+	fg[PRELIGHT]					= shade (1.0, "#F0F0F0")
+
+	bg[PRELIGHT]					= shade (1.0, "#3D3D3D")
+
+	bg[SELECTED]					= shade (1.0, "#383838")
+
+	engine "murrine"
+	{
+		contrast				= 0.0
+	#	gradient_shades				= {1.0,1.0,1.0,1.0}
+		gradient_shades				= {1.0,1.01,1.05,1.3}
+		roundness				= 3
+#		separatorstyle				= 1
+#		glow_shade				= 1.0
+#		glowstyle				= 1 #+1.5 glowshade
+        }
+}
+
+style "panel-unity" = "panel"
+{
+	#bg[ACTIVE]			= shade (1.5, "#575757")
+	#bg[NORMAL]			= shade (0.8, "#575757")
+	text[NORMAL]			= shade (1.0, "#F0F0F0")
+}
+
+style "panel-indicator" = "panel"
+{
+	ythickness					= 1							#Maybe 2 - Transmission indicator/whatever doesn't center
+	xthickness					= 0
+}
+
+style "panel-menubar" = "panel"
+{
+	xthickness					= 0
+	ythickness					= 0
+
+	GtkMenuBar	:: internal-padding		= 0
+
+	fg[NORMAL]					= "#9A9B9B"
+
+	engine "murrine"
+	{
+		roundness				= 1
+	}
+}
+
+style "panflute-seek"
+{
+	xthickness					= 15
+	ythickness					= 1
+
+	GtkScale	:: trough-border		= 0
+	GtkScale	:: slider-width			= 10							# Volume Slider Thickness 9
+	GtkScale	:: slider-length		= 22							# Volume Slider Length 21
+	GtkScale	:: trough-side-details		= 1
+
+	GtkScrollbar	:: fixed-slider-length		= 1
+
+	GtkWidget	:: focus-line-width		= 0
+	GtkWidget	:: focus-padding		= 0
+
+	fg[SELECTED]					= "#474747"
+	fg[INSENSITIVE]					= "#4E4E4E"
+
+	bg[NORMAL]					= "#474747"						#Slider Color When Playing
+	bg[PRELIGHT]					= "#535353"						#Slider prelight
+	bg[SELECTED]					= "#5C5C5C"						#Trough Color Played shade (0.8, @bg_color)
+
+	bg[INSENSITIVE]					= "#383838"						#Slider Color When Not Playing
+	bg[ACTIVE]					= "#474747"						#Trough Color Not Played
+
+	engine "murrine"
+	{
+		contrast				= 0.3
+		roundness				= 0
+		gradient_shades				= {2.05,1.55,1.45,1.35}
+		sliderstyle				= 0
+		focus_color				= @bg_color
+		border_colors				= {shade (1.2, "#474747"), shade (1.1, "#474747")}
+        }
+}
+
+#Gnome Panel
+widget_class	"*Panel*MenuBar*"							style		"panel"
+widget		"*PanelApplet*"								style		"panel"
+
+widget		"*Deskbar*Arrow" 							style		"panel"			# Deskbar Panel Applet
+
+widget		"*panflute*Scale*"							style:rc	"panflute-seek"
+widget		"*panflute*"								style		"panflute-seek"
+
+widget		"*UnityPanel*"								style		"panel-unity"
