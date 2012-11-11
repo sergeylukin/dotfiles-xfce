@@ -7,7 +7,6 @@ if [ -d ~/.dotfiles-xfce ]
 then
   echo "Removing old ~/.dotfiles-xfce directory"
   rm -fr ~/.dotfiles-xfce
-  exit
 fi
 
 # Clone repository
@@ -20,22 +19,19 @@ hash git >/dev/null && /usr/bin/env git clone https://github.com/sergeylukin/dot
 if [ -d ~/.config ]
 then
   echo "Backing up ~/.config directory to ~/.dotfiles-xfce/backup/"
-  mv ~/.config ~/.dotfiles-xfce/backup/
-  exit
+  mv ~/.config ~/.dotfiles-xfce/backup/.config
 fi
 # Back up ~/.icons
 if [ -d ~/.icons ]
 then
   echo "Backing up ~/.icons directory to ~/.dotfiles-xfce/backup/"
-  mv ~/.icons ~/.dotfiles-xfce/backup/
-  exit
+  mv ~/.icons ~/.dotfiles-xfce/backup/.icons
 fi
 # Back up ~/.themes
 if [ -d ~/.themes ]
 then
   echo "Backing up ~/.themes directory to ~/.dotfiles-xfce/backup/"
-  mv ~/.themes ~/.dotfiles-xfce/backup/
-  exit
+  mv ~/.themes ~/.dotfiles-xfce/backup/.themes
 fi
 
 
