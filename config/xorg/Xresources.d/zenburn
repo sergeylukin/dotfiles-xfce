@@ -1,0 +1,17 @@
+#define S_base03    #000010
+
+#define S_base02    #000000
+#define S_red     #9e1828
+#define S_green     #aece92
+#define S_yellow     #968a38
+#define S_blue     #414171
+#define S_magenta     #963c59
+#define S_cyan     #418179
+#define S_base2     #bebebe
+#define S_orange     #cf6171
+#define S_base01     #c5f779
+#define S_base00     #fff796
+#define S_base0     #4186be
+#define S_violet     #cf9ebe
+#define S_base1     #71bebe
+#define S_base3     #ffffff
