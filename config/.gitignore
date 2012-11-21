@@ -2,3 +2,4 @@ chromium/
 menus/
 npm-updater/
 xfce4/xfconf/xfce-perchannel-xml/xfce4-appfinder.xml
+config/Thunar/accels.scm
