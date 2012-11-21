@@ -33,7 +33,7 @@
     <property name="MenuImages" type="bool" value="true"/>
     <property name="ButtonImages" type="bool" value="true"/>
     <property name="MenuBarAccel" type="empty"/>
-    <property name="CursorThemeName" type="string" value="default"/>
+    <property name="CursorThemeName" type="string" value="cursors_Pulse-Glass"/>
     <property name="CursorThemeSize" type="int" value="16"/>
     <property name="IMModule" type="empty"/>
   </property>
