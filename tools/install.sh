@@ -33,11 +33,18 @@ then
   echo "Backing up ~/.themes directory to ~/.dotfiles-xfce/backup/"
   mv ~/.themes ~/.dotfiles-xfce/backup/.themes
 fi
+# Back up ~/wallpapers
+if [ -d ~/wallpapers ]
+then
+  echo "Backing up ~/wallpapers directory to ~/.dotfiles-xfce/backup/"
+  mv ~/wallpapers ~/.dotfiles-xfce/backup/wallpapers
+fi
 
 
 ln -s ~/.dotfiles-xfce/config ~/.config
 ln -s ~/.dotfiles-xfce/icons ~/.icons
 ln -s ~/.dotfiles-xfce/themes ~/.themes
+ln -s ~/.dotfiles-xfce/wallpapers ~/wallpapers
 
 echo "     _                  _ "
 echo "  __| | ___  _ __   ___| |"
