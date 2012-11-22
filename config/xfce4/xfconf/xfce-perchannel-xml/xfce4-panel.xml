@@ -8,14 +8,14 @@
     <property name="panel-1" type="empty">
       <property name="position" type="string" value="p=11;x=270;y=26"/>
       <property name="position-locked" type="bool" value="true"/>
-      <property name="size" type="uint" value="20"/>
+      <property name="size" type="uint" value="23"/>
       <property name="nrows" type="uint" value="1"/>
       <property name="length" type="uint" value="100"/>
       <property name="length-adjust" type="bool" value="true"/>
       <property name="autohide" type="bool" value="false"/>
       <property name="mode" type="uint" value="0"/>
       <property name="background-style" type="uint" value="0"/>
-      <property name="background-alpha" type="uint" value="0"/>
+      <property name="background-alpha" type="uint" value="100"/>
       <property name="enter-opacity" type="uint" value="100"/>
       <property name="leave-opacity" type="uint" value="100"/>
       <property name="plugin-ids" type="array">
@@ -30,15 +30,22 @@
       <property name="disable-struts" type="bool" value="false"/>
     </property>
     <property name="panel-2" type="empty">
-      <property name="position" type="string" value="p=12;x=499;y=743"/>
+      <property name="position" type="string" value="p=8;x=24;y=387"/>
       <property name="position-locked" type="bool" value="true"/>
       <property name="autohide" type="bool" value="true"/>
       <property name="length-adjust" type="bool" value="true"/>
       <property name="plugin-ids" type="array">
-        <value type="int" value="2"/>
         <value type="int" value="13"/>
+        <value type="int" value="12"/>
+        <value type="int" value="14"/>
+        <value type="int" value="9"/>
+        <value type="int" value="2"/>
       </property>
-      <property name="mode" type="uint" value="0"/>
+      <property name="mode" type="uint" value="1"/>
+      <property name="disable-struts" type="bool" value="false"/>
+      <property name="length" type="uint" value="97"/>
+      <property name="background-style" type="uint" value="0"/>
+      <property name="background-alpha" type="uint" value="96"/>
     </property>
   </property>
   <property name="plugins" type="empty">
@@ -76,8 +83,24 @@
       <property name="style" type="uint" value="0"/>
     </property>
     <property name="plugin-2" type="string" value="showdesktop"/>
-    <property name="plugin-13" type="string" value="directorymenu">
-      <property name="base-directory" type="string" value="/home/sergeylukin"/>
+    <property name="plugin-9" type="string" value="launcher">
+      <property name="items" type="array">
+        <value type="string" value="13536203481.desktop"/>
+      </property>
+    </property>
+    <property name="plugin-12" type="string" value="launcher">
+      <property name="items" type="array">
+        <value type="string" value="13536209753.desktop"/>
+      </property>
+    </property>
+    <property name="plugin-13" type="string" value="separator">
+      <property name="expand" type="bool" value="true"/>
+      <property name="style" type="uint" value="0"/>
+    </property>
+    <property name="plugin-14" type="string" value="launcher">
+      <property name="items" type="array">
+        <value type="string" value="13536211334.desktop"/>
+      </property>
     </property>
   </property>
 </channel>

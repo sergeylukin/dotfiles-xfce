@@ -1,0 +1,12 @@
+
+[Desktop Entry]
+Type=Application
+Version=0.9.4
+Encoding=UTF-8
+Name=Chromium
+Comment=A mostly BSD-licensed web browser based on WebKit and Gtk+
+Icon=/usr/local/share/chromium/product_logo_48.png
+Exec=chrome
+Categories=Application;Network;WebBrowser;
+StartupNotify=true
+X-XFCE-Source=file:///usr/local/share/applications/chrome.desktop
