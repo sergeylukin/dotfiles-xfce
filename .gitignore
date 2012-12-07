@@ -1,2 +1,7 @@
+# Why would we need backup stuff in repo?
 /backup/*
+# This files doesn't look like affect on something I want to track in repo
+config/Thunar/accels.scm
+
+# Don't exclude placeholder
 !.gitkeep
