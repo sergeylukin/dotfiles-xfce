@@ -42,7 +42,7 @@
         <value type="int" value="2"/>
       </property>
       <property name="mode" type="uint" value="1"/>
-      <property name="disable-struts" type="bool" value="false"/>
+      <property name="disable-struts" type="bool" value="true"/>
       <property name="length" type="uint" value="97"/>
       <property name="background-style" type="uint" value="0"/>
       <property name="background-alpha" type="uint" value="96"/>
